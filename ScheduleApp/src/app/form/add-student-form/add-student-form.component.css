@@ -1,0 +1,19 @@
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #4A154B;
+}
+
+.btn{
+    background-color: #4A154B;
+    color: white;
+    border-radius: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+form{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+}
