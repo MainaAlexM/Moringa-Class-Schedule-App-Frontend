@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostFormComponent } from './form/post-form/post-form.component';
+import { UpdateFormComponent } from './form/update-form/update-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostFormComponent
+    PostFormComponent,
+    UpdateFormComponent
   ],
   imports: [
     BrowserModule,
