@@ -2,7 +2,7 @@ form{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 18px;
-    border: 1px solid rgb(26, 0, 38);
+    
     border-radius: 10px;
 }
 
@@ -14,7 +14,7 @@ form{
 .btn{
     background-color: #4A154B;
     color: white;
-    border-radius: 40px;
+    border-radius: 30px;
     font-family: 'Times New Roman', Times, serif;
 }
 
