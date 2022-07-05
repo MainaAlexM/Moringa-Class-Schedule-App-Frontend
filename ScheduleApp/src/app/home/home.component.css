@@ -1,0 +1,21 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+.display{
+    display: flex;
+}
+.card{
+    margin: 0.2rem;
+    width: 18rem;
+    height: 20rem;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    font-size-adjust: 3rem;
+}
+.card-body{
+    background-color: rgb(243, 240, 244)
+}
