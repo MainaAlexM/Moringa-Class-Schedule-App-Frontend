@@ -1,0 +1,25 @@
+form{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+    
+    border-radius: 10px;
+}
+
+.heading{
+    color: #4A154B;
+    font-weight: bold;
+}
+
+.btn{
+    background-color: #4A154B;
+    color: white;
+    border-radius: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn:hover {
+    color: #FFF;
+    background: black;
+    font-family: 'Times New Roman', Times, serif;
+}
