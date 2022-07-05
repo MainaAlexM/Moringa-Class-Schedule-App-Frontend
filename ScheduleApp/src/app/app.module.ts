@@ -7,6 +7,7 @@ import { PostFormComponent } from './form/post-form/post-form.component';
 import { UpdateFormComponent } from './form/update-form/update-form.component';
 import { AddStudentFormComponent } from './form/add-student-form/add-student-form.component';
 import { ScheduleComponent } from './schedules/schedule/schedule.component';
+import { SearchComponent } from './search/search/search.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ScheduleComponent } from './schedules/schedule/schedule.component';
     PostFormComponent,
     UpdateFormComponent,
     AddStudentFormComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
