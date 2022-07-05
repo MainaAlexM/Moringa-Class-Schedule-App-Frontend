@@ -6,11 +6,26 @@ import { AppComponent } from './app.component';
 import { PostFormComponent } from './form/post-form/post-form.component';
 import { UpdateFormComponent } from './form/update-form/update-form.component';
 
+import { StuProfileComponent } from './stu-profile/stu-profile.component';
+
+import { TmProfileComponent } from './tm-profile/tm-profile.component';
+
+import { HomeComponent } from './home/home.component';
+import { SessionSchComponent } from './session-sch/session-sch.component';
+import { SessionDetailsComponent } from './session-details/session-details.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     PostFormComponent,
-    UpdateFormComponent
+    UpdateFormComponent,
+    StuProfileComponent,
+    TmProfileComponent,
+    HomeComponent,
+    SessionSchComponent,
+    SessionDetailsComponent
+
   ],
   imports: [
     BrowserModule,
