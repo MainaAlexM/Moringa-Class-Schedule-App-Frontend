@@ -9,6 +9,8 @@ import { StuProfileComponent } from './stu-profile/stu-profile.component';
 import { TmProfileComponent } from './tm-profile/tm-profile.component';
 
 import { HomeComponent } from './home/home.component';
+import { SessionSchComponent } from './session-sch/session-sch.component';
+import { SessionDetailsComponent } from './session-details/session-details.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     StuProfileComponent,
     TmProfileComponent,
-    HomeComponent
+    HomeComponent,
+    SessionSchComponent,
+    SessionDetailsComponent
   ],
   imports: [
     BrowserModule,
