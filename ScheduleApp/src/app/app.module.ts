@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostFormComponent } from './form/post-form/post-form.component';
+import { UpdateFormComponent } from './form/update-form/update-form.component';
 
 import { StuProfileComponent } from './stu-profile/stu-profile.component';
 
@@ -18,11 +19,13 @@ import { SessionDetailsComponent } from './session-details/session-details.compo
   declarations: [
     AppComponent,
     PostFormComponent,
+    UpdateFormComponent,
     StuProfileComponent,
     TmProfileComponent,
     HomeComponent,
     SessionSchComponent,
     SessionDetailsComponent
+
   ],
   imports: [
     BrowserModule,
