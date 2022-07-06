@@ -9,6 +9,15 @@ import { AddStudentFormComponent } from './form/add-student-form/add-student-for
 import { ScheduleComponent } from './schedules/schedule/schedule.component';
 import { SearchComponent } from './search/search/search.component';
 
+import { StuProfileComponent } from './stu-profile/stu-profile.component';
+
+import { TmProfileComponent } from './tm-profile/tm-profile.component';
+
+import { HomeComponent } from './home/home.component';
+import { SessionSchComponent } from './session-sch/session-sch.component';
+import { SessionDetailsComponent } from './session-details/session-details.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +25,12 @@ import { SearchComponent } from './search/search/search.component';
     UpdateFormComponent,
     AddStudentFormComponent,
     ScheduleComponent,
-    SearchComponent
+    SearchComponent,
+    StuProfileComponent,
+    TmProfileComponent,
+    HomeComponent,
+    SessionSchComponent,
+    SessionDetailsComponent
   ],
   imports: [
     BrowserModule,
