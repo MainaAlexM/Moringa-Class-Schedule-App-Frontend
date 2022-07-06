@@ -7,6 +7,7 @@ import { PostFormComponent } from './form/post-form/post-form.component';
 import { UpdateFormComponent } from './form/update-form/update-form.component';
 import { AddStudentFormComponent } from './form/add-student-form/add-student-form.component';
 import { ScheduleComponent } from './schedules/schedule/schedule.component';
+import { SearchComponent } from './search/search/search.component';
 
 import { StuProfileComponent } from './stu-profile/stu-profile.component';
 
@@ -28,6 +29,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     UpdateFormComponent,
     AddStudentFormComponent,
     ScheduleComponent,
+    SearchComponent,
     StuProfileComponent,
     TmProfileComponent,
     HomeComponent,
