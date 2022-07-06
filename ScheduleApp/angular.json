@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "04154305-2332-42d5-83ec-0eae94b3a920"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -104,6 +107,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ScheduleApp"
+  }
 }
