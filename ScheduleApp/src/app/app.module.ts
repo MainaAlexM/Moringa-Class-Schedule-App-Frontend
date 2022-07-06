@@ -16,6 +16,10 @@ import { TmProfileComponent } from './tm-profile/tm-profile.component';
 import { HomeComponent } from './home/home.component';
 import { SessionSchComponent } from './session-sch/session-sch.component';
 import { SessionDetailsComponent } from './session-details/session-details.component';
+import { NavComponent } from './nav/nav.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -30,7 +34,11 @@ import { SessionDetailsComponent } from './session-details/session-details.compo
     TmProfileComponent,
     HomeComponent,
     SessionSchComponent,
-    SessionDetailsComponent
+    SessionDetailsComponent,
+    NavComponent,
+    LoginComponent,
+    SignupComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
