@@ -10,6 +10,10 @@ import { TmProfileComponent } from './tm-profile/tm-profile.component';
 import { HomeComponent } from './home/home.component';
 import { SessionDetailsComponent } from './session-details/session-details.component';
 import { SessionSchComponent } from './session-sch/session-sch.component';
+import { LoginComponent } from './login/login.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { SignupComponent } from './signup/signup.component';
+import { NavComponent } from './nav/nav.component';
 
 const routes: Routes = [
   { path: "tm", component: TmProfileComponent},
@@ -21,6 +25,10 @@ const routes: Routes = [
   { path: 'post', component: PostFormComponent },
   { path: 'add', component: AddStudentFormComponent },
   { path: 'schedule', component: ScheduleComponent},
+  { path: 'login', component:LoginComponent},
+  { path: '', component:SidebarComponent},
+  { path: 'nav', component:NavComponent},
+  { path: 'signup', component:SignupComponent},
 ];
 
 @NgModule({
