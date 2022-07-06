@@ -5,6 +5,7 @@ import { UpdateFormComponent } from './form/update-form/update-form.component';
 import { PostFormComponent } from './form/post-form/post-form.component';
 import { AddStudentFormComponent } from './form/add-student-form/add-student-form.component';
 import { ScheduleComponent } from './schedules/schedule/schedule.component';
+import { SearchComponent } from './search/search/search.component';
 import { StuProfileComponent } from './stu-profile/stu-profile.component';
 import { TmProfileComponent } from './tm-profile/tm-profile.component';
 import { HomeComponent } from './home/home.component';
@@ -24,11 +25,12 @@ const routes: Routes = [
   { path: 'update', component: UpdateFormComponent },
   { path: 'post', component: PostFormComponent },
   { path: 'add', component: AddStudentFormComponent },
-  { path: 'schedule', component: ScheduleComponent},
   { path: 'login', component:LoginComponent},
   { path: '', component:SidebarComponent},
   { path: 'nav', component:NavComponent},
   { path: 'signup', component:SignupComponent},
+  { path: 'schedule', component: ScheduleComponent },
+  { path: 'search', component: SearchComponent },
 ];
 
 @NgModule({
