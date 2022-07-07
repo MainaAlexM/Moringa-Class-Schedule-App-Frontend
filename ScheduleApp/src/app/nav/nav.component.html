@@ -2,26 +2,28 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head> 
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color:#fffbff;">
     <div class="container-fluid d-flex">
-        <button type="button" id="sidebarCollapse" class="btn btn-sm btn-info" style="background-color:#4A154B; color:white;">
-            <i class="fa fa-bars" aria-hidden="true"> ClassApp</i>
-        </button>
-        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
+        <div class="buttons">
+            <button type="button" id="sidebarCollapse" class="btn btn-sm btn" style="background-color:#4A154B; color:white;">
+                <i class="fa fa-bars" aria-hidden="true"> ClassApp</i>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav navbar-nav ml-auto ">
-                          
+            <ul class="nav navbar-nav ml-auto">
+                
                 <li class="nav-item active">
-                    <a class="nav-link" href="#l">Log In</a>
+                    <a class="nav-link" href="login" id="login">Log In</a>
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href='#l'>Sign Up</a>
+                    <a class="nav-link" href='signup'>Sign Up</a>
                 </li>
-               
+            
             </ul>
         </div>
     </div>
