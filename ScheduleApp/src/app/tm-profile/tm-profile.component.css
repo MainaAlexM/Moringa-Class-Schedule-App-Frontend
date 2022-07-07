@@ -1,0 +1,49 @@
+.prof-info{
+    font-size: large;
+    font-weight: 700;
+}
+.inner-profile{
+    background-color: #4a154b;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.profile{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+.name p{
+    display: flex;
+}
+
+
+/* Profile Editing Form */
+form {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 1;
+    background: transparent;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 45px;
+    /* text-align: center; */
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+hr{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.btn{
+    background-color: #4A154B;
+    color: white;
+    border-radius: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.names{
+    display: flex;
+}
+.name-input{
+    margin-right: 1.5rem;
+}
