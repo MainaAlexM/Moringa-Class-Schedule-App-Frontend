@@ -45,7 +45,7 @@ span {
 
 #sidebar {
   min-width: 10rem;
-  max-width: 17rem;
+  max-width: 20rem;
   padding: 0.5rem 4rem 1rem 2rem;
   /* padding-right:4rem; */
   background: #4a154b;
@@ -53,6 +53,7 @@ span {
   position: -webkit-sticky;
   position: sticky;
   transition: all 0.3s;
+  
 }
 
 #sidebar.active {
@@ -124,9 +125,6 @@ span {
   background: #fff;
 }
 
-#sidebar ul li a i {
-  margin-right: 10px;
-}
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
