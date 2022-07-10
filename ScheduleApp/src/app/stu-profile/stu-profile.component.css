@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .prof-info{
     font-size: large;
     font-weight: 700;
@@ -19,7 +20,7 @@
 
 /* Profile Editing Form */
 form {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 18px;
     z-index: 1;
@@ -40,7 +41,7 @@ hr{
     background-color: #4A154B;
     color: white;
     border-radius: 40px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
 }
 .names{
     display: flex;
