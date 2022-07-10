@@ -2,9 +2,10 @@ export class Schedule {
     constructor(
     public id: number,
     public pk: number,
+    public user: string,
     public user_id: number,
     public profile_id: number,
-    public email: string,
+    public email: any,
     public profile: any,
     public name: string,
     public user_type:string,
@@ -18,6 +19,7 @@ export class Schedule {
     public end: number,
     public comment: string,
     public likes: any,
+    public student: string,
     public student_id: number,
     public technical_mentor_id: number,
     public content: string,
@@ -32,5 +34,6 @@ export class Schedule {
     public body: string,
     public bio: string,
     public profile_img: any,
+    public profile_image: any
     ){}
 }

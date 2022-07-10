@@ -4,10 +4,10 @@ body{
 }
 .display{
     display: flex;
+    flex-wrap: wrap;
 }
 .card{
     margin: 0.2rem;
-    width: 18rem;
     height: 20rem;
 }
 a{

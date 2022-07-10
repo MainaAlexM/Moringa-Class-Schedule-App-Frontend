@@ -22,7 +22,7 @@ export class AppComponent {
         this.listscomments=data
       }
     );
-    
+  
     
   }
   

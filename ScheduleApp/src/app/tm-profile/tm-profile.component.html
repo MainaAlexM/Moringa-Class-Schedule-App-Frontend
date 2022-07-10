@@ -7,10 +7,10 @@
                     style="width: 150px;" alt="Avatar" />
             </div>
 
-            <div class="name m-3">
-                <p class="name my-2"><span class="prof-info">Name: </span>&nbsp; &nbsp; FirstName LastName</p>
-                <p class="email my-2"><span class="prof-info">Email: </span>&nbsp; Email@example.com</p>
-                <p class="bio my-2"><span class="prof-info text-start">Bio: </span>&nbsp;&nbsp; I am a Ruby Developer with more than 10 months experience. I am passionate with coding.</p>
+            <div class="name m-3" *ngFor="let info of profileInfo">
+                
+                <p class="email my-2"><span class="prof-info">Email: </span>&nbsp; {{info.user.email}}</p>
+                <p class="bio my-2"><span class="prof-info text-start">Bio: </span>&nbsp;&nbsp; {{info.bio}}</p>
             </div>
         </div>
     </div>
@@ -35,30 +35,34 @@
                         <input type="text" class="form-control" id="exampleInputemail" placeholder="Lastname" aria-describedby="">
                     </div>
                 </div>
-            <!-- add student -->
-            <div class="mb-3">
-                <label for="exampleInputemail" class="form-label"> Email Address </label>
-                <input type="email" class="form-control" id="exampleInputemail" readonly aria-describedby="">
-            </div>
-            
-            <div class="mb-3">
-                <label for="exampleInputemail" class="form-label"> Role </label>
-                <input class="form-control" type="text" placeholder="Student" readonly>
-            </div>
-            <!-- student module -->
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1"> Bio </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write your bio here" rows="3"></textarea>
-            </div>
-            
-            <!-- submit -->
-            <div class="row mb-5">
-                <div class="col text-center">
-                <button type="submit" class="btn"> Submit </button>
-            </div>
-            </div>
+                <!-- add student -->
+                <div class="mb-3">
+                    <label for="exampleInputemail" class="form-label"> Email Address </label>
+                    <input type="email" class="form-control" id="exampleInputemail" readonly aria-describedby="">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputemail" class="form-label"> Role </label>
+                    <input class="form-control" type="text" placeholder="Student" readonly>
+                </div>
+                <!-- student module -->
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1"> Bio </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write your bio here" rows="3"></textarea>
+                </div>
+                
+                <!-- submit -->
+                <div class="row mb-5">
+                    <div class="col text-center">
+                        <button type="submit" class="btn"> Submit </button>
+                    </div>
+                </div>
             </form>
-            </div>
+        </div>
         
     </div>
 </div>
+
+
+
+<!-- <p class="name my-2"><span class="prof-info">Name/Role: </span>&nbsp; &nbsp;  {{info.user.email}}</p> -->
