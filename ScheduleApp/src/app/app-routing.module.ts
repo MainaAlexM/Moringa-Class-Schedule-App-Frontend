@@ -12,22 +12,19 @@ import { HomeComponent } from './home/home.component';
 import { SessionDetailsComponent } from './session-details/session-details.component';
 import { SessionSchComponent } from './session-sch/session-sch.component';
 import { LoginComponent } from './login/login.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { SignupComponent } from './signup/signup.component';
-import { NavComponent } from './nav/nav.component';
+
 
 const routes: Routes = [
   { path: "tm", component: TmProfileComponent},
-  { path: "home", component: HomeComponent},
-  { path: "stu", component: StuProfileComponent},
+  { path: "", component: HomeComponent},
+  { path: "student", component: StuProfileComponent},
   { path: "session-search", component: SessionSchComponent},
   { path: "session", component: SessionDetailsComponent},
   { path: 'update', component: UpdateFormComponent },
   { path: 'post', component: PostFormComponent },
   { path: 'add', component: AddStudentFormComponent },
   { path: 'login', component:LoginComponent},
-  { path: '', component:SidebarComponent},
-  { path: 'nav', component:NavComponent},
   { path: 'signup', component:SignupComponent},
   { path: 'schedule', component: ScheduleComponent },
   { path: 'search', component: SearchComponent },

@@ -3,4 +3,10 @@ table{
     color: white;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
+    height: 25vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
