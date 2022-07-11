@@ -1,30 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 h2{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     color: #4A154B;
 }
 
-.btn{
-    background-color: #4A154B;
-    color: white;
-    border-radius: 40px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
 form {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 18px;
     z-index: 1;
     background: transparent;
-    max-width: 600px;
+    max-width: 750px;
     margin: 0 auto 100px;
     padding: 45px;
-    text-align: center;
+    /* text-align: center; */
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 hr{
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.create{
+    width:50%;
+    font-weight:bold;
+    color: black;
+    font-size: 1.5rem;
+    box-shadow: 2px 5px 8px #4A154B;
+}
+.btn:hover {
+    filter: brightness(.8);
+    box-shadow: 2px 5px 8px #4A154B;
 }

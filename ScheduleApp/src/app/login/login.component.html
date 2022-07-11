@@ -1,50 +1,76 @@
-<section class="vh-100" style="background-color: #D9D9D9;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-xl-10">
-          <div class="card" style="border-radius: 1rem;">
-            <div class="row g-0">
-              <div class="col-md-6 col-lg-5 d-none d-md-block">
-                <img src="https://images.unsplash.com/photo-1614226114667-c8318d06f300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80
-                "
-                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height=24px width= 30px" />
-              </div>
-              <div class="col-md-6 col-lg-7 d-flex align-items-center" style="background-color:#4A154B">
-                <div class="card-body p-4 p-lg-5 text-black">
-  
-                  <form>
-  
-                    <div class="d-flex align-items-center mb-3 pb-1" style="color:#D9D9D9">   
-                      <span class="h1 fw-bold mb-0">Login Form</span>
-                    </div>
-  
-                    
-                    <div class="form-outline mb-4">
-                      <input type="text" id="form2Example17" class="form-control form-control-lg" placeholder='Enter Your username'/>
-                      
-                    </div>
-  
-                    <div class="form-outline mb-4">
-                      <input type="password" id="form2Example27" class="form-control form-control-lg" placeholder='Enter Your password'/>
-                      
-                    </div>
-  
-                    <div class="pt-1 mb-4">
-                      <button class="btn  btn-lg btn-block" type="button" style="background-color:#D9D9D9; color:#4A154B;">Login</button>
-                    </div>
-  
-                    <a class="small text-muted" style="color:white;" href="#!">Forgot password?</a>
-                    <p class="mb-5 pb-lg-2" style="color: #D9D9D9;">Don't have an account? <a href="#!"
-                        style="color:#810955 ;">SignUp here</a>
-                    </p>
-                    
-                  </form>
-  
-                </div>
-              </div>
+<!-- <div class="container">
+  <div class="login-form mx-auto">
+    <h2 class="title">Login Form </h2>
+    <div class="input-field">
+      <label for="email"></label>
+      <input type="email" placeholder="Enter your email address" name="email" id="email">
+    </div>
+    <div class="input-field">
+      <label for="pass"></label>
+      <input type="password" placeholder="**********" name="pass" id="pass">
+    </div>
+    <div class="input">
+      <div>
+        <input type="checkbox" name="" id="remember">
+        <label for="remember">Keep me signed in? </label>
+      </div>
+      <a href="#">forgot your password?</a>
+    </div>
+
+    <button class="btn login mx-auto">Sign in</button>
+
+    <div class="new-user">
+      <p>Don't Have an Account?</p>
+      <a href="/signup" class="btn create">Sign Up</a>
+
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid white" style="padding-bottom: 50vh;">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mt-5">
+        <form class="form-control p-5 h-95" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm" novalidate>
+          <h3 class="text-center fs-3 logo fw-bold mb-4">Sign In</h3>
+          <div class="form-group">
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="f.submitted && isLoginFailed"
+            >
+              Incorrect email or Password {{ errorMessage }}
             </div>
           </div>
-        </div>
+          <div class="mb-4">
+            <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required minlength="3"
+              maxlength="100" #email="ngModel" placeholder="Email" />
+          </div>
+          <div class="mb-4">
+            <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+              minlength="6" #password="ngModel" placeholder="Password" />
+          </div>
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Remember me
+            </label>
+          </div>
+
+          <div class="pt-1 mb-4" style="color: #51b4b4;">
+            <button class="btn btn-lg btn-block" style="background-color: #51b4b4;">Sign In</button>
+          </div>
+          
+          <div class="pt-2">
+            <p class="mb-3 pb-lg-2">Don't have an account? <a href="donor-register" class="text-decoration-none" style="color: #ed5e46;">Register here</a></p>
+          <a href="#!" class="small text-muted">Terms of use.</a>
+          <a href="#!" class="small text-muted">Privacy policy</a>
+          </div>
+
+        </form>
       </div>
+
     </div>
-  </section>
+  </div>
+</div>
