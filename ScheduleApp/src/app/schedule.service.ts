@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
+import { Schedule } from './class/schedule'
 // import { environment } from 'src/environments/environment';
 
 
