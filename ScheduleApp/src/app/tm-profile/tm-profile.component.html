@@ -1,31 +1,61 @@
-<div class="row">
-    <div class="profile col-md-4 col-sm-4 col-lg-4 py-3 px-3 text-center">
-        <div class="icon">
-            <img class="" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
-                style="width: 150px;" alt="Avatar" />
-        </div>
+<div class="row my-3">
+    <div class="card" style="width: 18rem; height: 18rem;">
+        <img src="https://cdn-icons.flaticon.com/png/128/552/premium/552721.png?token=exp=1657367575~hmac=be0aa2979e529aab47711c0ede60d5d5" class="rounded-circle" style="width: 100px; height: 100px;" alt="Avatar" class="card-img-top mx-auto" alt="...">
+        <div class="card-body">
+            
+            <h5 class="card-title">{{profile.user.name}} </h5>
+            <p class="card-text"><span class="prof-info text-start">Bio: </span>&nbsp; <a href="mailto:{{profile.user.email}}">{{profile.user.email}} </a></p>
+            <p class="bio my-2"><span class="prof-info text-start">Bio: </span>&nbsp;&nbsp; {{profile.bio}}</p>
 
-        <div class="name my-5">
-            <p class="name my-5">Jane Doe</p>
-            <p class="email">janedoe@gmail.com</p>
-            <p class="bio my-5">I am a Ruby Developer</p>
+        
         </div>
-
     </div>
 
     <div class="editing py-3 col-md-8 border-start px-5 border-success">
-        <h2 class="text-center">TM Profile Settings</h2>
-        <p class="text-center my-3">Edit Your Profile Information and Icon Here</p>
+        <h2 class="text-center">Mentor's Profile Settings</h2>
+        <!-- <p class="text-center my-3">Edit Your Profile Information and Icon Here</p> -->
 
-        <h3>Personal Information</h3>
         <hr>
         <!-- User Creation form -->
-        <!-- <div class="dummy my-5">e</div>
-        <div class="dummy my-5">d</div>
-        <div class="dummy my-5">d</div>
-        <div class="dummy my-5">d</div>
-        <div class="dummy my-5">d</div>
-        <div class="dummy my-5">d</div>
-        <div class="dummy my-5">d</div> -->
+        <div class="container mt-5">
+            <form (ngSubmit)="submitData(postForm.value)" #postForm="ngForm" class=" mx-auto">
+                <h4 class="text-center"> Edit Personal Information </h4>
+            
+                <!-- Student Name -->
+                <label for="exampleInputemail" class="form-label"> Name </label>
+                <div class="names">
+                    <div class="mb-3 name-input">
+                        <input type="text" ngModel name="name" class="form-control" id="exampleInputemail" placeholder="Firstname" aria-describedby="">
+                    </div>
+                </div>
+                <!-- add student -->
+                <div class="mb-3">
+                    <label for="exampleInputemail" class="form-label"> Email Address </label>
+                    <input type="email" class="form-control" id="exampleInputemail" readonly value="{{profile.user.email}} " aria-describedby="">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputemail" class="form-label"> Role </label>
+                    <input class="form-control" type="text" placeholder="Student" readonly value="{{profile.user.user_type}}">
+                </div>
+                <!-- student module -->
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1"> Bio </label>
+                    <textarea class="form-control" name="bio" ngModel id="exampleFormControlTextarea1" placeholder="Write your bio here" rows="3"></textarea>
+                </div>
+                
+                <!-- submit -->
+                <div class="row mb-5">
+                    <div class="col text-center">
+                        <button type="submit" class="btn"> Submit </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
     </div>
 </div>
+
+
+
+<!-- <p class="name my-2"><span class="prof-info">Name/Role: </span>&nbsp; &nbsp;  {{info.user.email}}</p> -->

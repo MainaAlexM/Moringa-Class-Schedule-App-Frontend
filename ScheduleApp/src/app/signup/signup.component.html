@@ -1,54 +1,59 @@
-
-<section class="vh-100" style="background-color:#4A154B">
-
-    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-      <div class="container">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-            <div class="card" style="border-radius: 15px;">
-              <div class="card-body p-5">
-                <h2 class="text-uppercase text-center mb-5">SignUp Form</h2>
-    
-                <form>
-    
-                  <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">First Name</label>
-                  </div>
-    
-                  <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Last Name</label>
-                  </div>
-    
-                
-    
-                  <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example4cg">Password</label>
-                  </div>
-    
-                  <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example4cdg">Confirm your password</label>
-                  </div>
-    
-                  
-                  <div class="d-flex justify-content-center">
-                    <button type="button"
-                      class="btn btn-success btn-block btn-lg  text-white" style="background-color:#4A154B; color:white;">SignUp</button>
-                  </div>
-    
-                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
-                      class="fw-bold text-body"style="color:white;"><u>Login here</u></a></p>
-    
-                </form>
-    
-              </div>
-            </div>
+<div class="container">
+  <form class="form-control p-5 h-95" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm" novalidate>
+  <div class="signup-form mx-auto">
+    <h2 class="title">Create Account</h2>
+    <!-- <div class="mb-4">
+        <input type="text" class="form-control" name="name" [(ngModel)]="form.name" minlength="3" required
+          name #name="ngModel" placeholder="name" />
+        <div class="alert-danger" *ngIf="name.errors && f.submitted">
+          <div *ngIf="name.errors?.['required']">Name Required</div>
+          <div *ngIf="name.errors?.['minlength']">
+            Name must have atleast 3 characters
           </div>
+        </div>
+    </div> -->
+       <div class="mb-4 input-field">
+      <label for="email"></label>   
+      <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+        #email="ngModel" placeholder="Enter Your Email" />
+      <div class="alert-danger" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">
+          Email must be a valid email address
         </div>
       </div>
     </div>
-</section>
 
+        
+    <div class="mb-4 input-field">
+      <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+        minlength="8" #password="ngModel" placeholder="**********" />
+      <div class="alert-danger" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+        <div *ngIf="password.errors?.['minlength']">
+          Password must be at least 8 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="input">
+      <div>
+        <input type="checkbox" name="" id="remember">
+        <label for="remember">Keep me signed in? </label>
+      </div>
+      <a href="#">forgot your password?</a>
+    </div>
+
+    <p class="terms">By Continue, you agree our <strong>Condition of use</strong> and <strong>Privacy Notice</strong>.</p>
+
+    <button class="btn signup mx-auto">Sign Up</button>
+
+    <div class="new-user">
+      <p>Already Have an Account?</p>
+      <a href="/login" class="btn create">Login</a>
+
+    </div>
+  </div>
+ </form>
+</div>
