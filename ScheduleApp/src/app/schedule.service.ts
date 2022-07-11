@@ -10,24 +10,46 @@ import { Schedule } from './class/schedule'
 })
 export class ScheduleService {
 
-
+readonly APIurl = `https://class-scheduleapp.herokuapp.com`
 
   constructor(
     private http: HttpClient
   ) { }
- 
 
 
-  getComments(): Observable<any> {
+
+getComments(): Observable<any[]> {
+  
+  return this.http.get<any[]>(`${this.APIurl}/comments/`)
+}
+
+getModules(): Observable<any[]> {
     
-    return this.http.get("https://scheduleizo.herokuapp.com/comments/")
-   
-
+  return this.http.get<any[]>(`${this.APIurl}/modules/`)
 }
 
-postComments(comments:Schedule):Observable<any>{
-  return this.http.post("https://scheduleizo.herokuapp.com/comments/",comments)
+getProfile(): Observable<any[]> {
+    
+  return this.http.get<any['5']>(`${this.APIurl}/api/user/5/profile/`)
+  // A method to get the user id and add it to the path as an argument (id)
 }
+
+
+// Post
+
+postData(val: any){
+  return this.http.post(`${this.APIurl}/post`, val)
+}
+
+// submitData(val: any){
+//   return this.http.post(`${this.APIurl}/api/user/5/update/profile/`, val)
+// }
+
+updateProfile(val: any){
+  return this.http.put<any['5']>(`${this.APIurl}/api/user/5/update/profile/`, val)
+}
+
+
 
 }
 

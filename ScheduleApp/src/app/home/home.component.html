@@ -1,44 +1,31 @@
 
-<div class="heading">
-    <h2 class="home-head mx-5">Dashboard</h2>
+<div class="dash-title row">
+    
+    <div class="heading col-md-5">
+        <h2 class="home-head mx-5">Dashboard</h2>
+    </div>
+
+    <div class="col-md-5 text-center">
+        <a href="add_module"><button type="submit" class="btn">New Module</button></a>
+    </div>
     <hr class="head-rule">
+
 </div>
 <div class="row">
 
     <div class="display col-md-8">
-        <a href="#Card" class="col-md-4">
+
+        <a href="#Card" class="col-md-4" *ngFor="let module of myModules">   
             <div class="card p-3">
-                <img class="" src="/assets/images/git.png" class="card-img-top" alt="html">
+                <img class="" src="{{module.profile_image}}" class="card-img-top" alt="html">
                 <hr>
                 <div class="card-body">
-                    <h5 class="card-text">Introduction to HTML</h5>
-                    <p  class="text-end py-2"><small>By: RhonaJoy</small></p>
+                    <h5 class="card-text">Name: {{module.name}}</h5>
+                    <p  class="text-end py-2"><small>By: {{module.technical_mentor.email}}</small></p>
                 </div>
             </div>
         </a>
 
-        <a href="#Card" class="col-md-4">
-            <div class="card p-3">
-                <img class="" src="/assets/images/git.png" class="card-img-top" alt="html">
-                <hr>
-                <div class="card-body">
-                    <h5 class="card-text">Introduction to CSS</h5>
-                    <p  class="text-end"><small>By: RhonaJoy</small></p>
-                </div>
-            </div>
-        </a>
-
-        <a href="#Card" class="col-md-4 mx-2">
-            <div class="card p-3">
-                <img class="" src="/assets/images/git.png" class="card-img-top" alt="html">
-                <hr>
-                <div class="card-body">
-                    <h5 class="card-text">Introduction to Git</h5>
-                    <p  class="text-end pt-3"><small>By: RhonaJoy</small></p>
-                </div>
-            </div>
-        </a>
-        
     </div>
 
     <div class=" notifications col-md-4 px-5 text-center">
@@ -48,6 +35,7 @@
         </div>
 
         <div class="announcements px-3">
+            <h4><b>Announcements</b></h4><hr>
             <div class="trial"> <i class="bi bi-grid-3x2-gap-fill"></i> First Announcement &#xF3F5;</div>
             <div class="trial my-3">Second Announcement</div>
             <div class="trial">Third Announcement</div>

@@ -13,6 +13,7 @@ import { SessionDetailsComponent } from './session-details/session-details.compo
 import { SessionSchComponent } from './session-sch/session-sch.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ModuleComponent } from './module/module.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'signup', component:SignupComponent},
   { path: 'schedule', component: ScheduleComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'module', component: ModuleComponent },
 ];
 
 @NgModule({

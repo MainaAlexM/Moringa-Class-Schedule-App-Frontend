@@ -30,22 +30,8 @@ export class AppComponent {
         this.listscomments=data
       }
     );
-    // let comments=new Schedule();
-    // comments.comment="You are the best",
-    // comments.likes=1
-
-    // this._ScheduleService.postComments(comments)
-    // .subscribe(
-    //   data=>{
-    //     this.objcomments=data
-    //   }
-    // );
+  
     
-  }
-
-  onSubmit(data:any){
-    this.http.post("https://scheduleizo.herokuapp.com/comments/",data)
-    console.log(data)
   }
   
 }
