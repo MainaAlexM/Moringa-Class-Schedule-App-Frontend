@@ -1,13 +1,26 @@
 <div class="container">
+  <form class="form-control p-5 h-95" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm" novalidate>
   <div class="login-form mx-auto">
     <h2 class="title">Login Form </h2>
-    <div class="input-field">
-      <label for="email"></label>
-      <input type="email" placeholder="Enter your email address" name="email" id="email">
+    <div class="form-group">
+      <div
+        class="alert alert-danger"
+        role="alert"
+        *ngIf="f.submitted && isLoginFailed"
+      >
+        Kindly Enter Correct Email or Password {{ errorMessage }}
+      </div>
     </div>
-    <div class="input-field">
-      <label for="pass"></label>
-      <input type="password" placeholder="**********" name="pass" id="pass">
+    <div class="mb-4 input-field">
+      <label for="email"></label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required minlength="3"
+        maxlength="100" #email="ngModel" placeholder="Email" />
+    </div>
+    <div class="mb-4 input-field">
+      <label for="password"></label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+        minlength="6" #password="ngModel" placeholder="**********"  />
     </div>
     <div class="input">
       <div>
@@ -25,4 +38,7 @@
 
     </div>
   </div>
+</form>
 </div>
+
+         
