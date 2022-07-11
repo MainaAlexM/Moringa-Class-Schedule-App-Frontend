@@ -1,0 +1,59 @@
+<div class="container">
+  <form class="form-control p-5 h-95" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm" novalidate>
+  <div class="signup-form mx-auto">
+    <h2 class="title">Create Account</h2>
+    <!-- <div class="mb-4">
+        <input type="text" class="form-control" name="name" [(ngModel)]="form.name" minlength="3" required
+          name #name="ngModel" placeholder="name" />
+        <div class="alert-danger" *ngIf="name.errors && f.submitted">
+          <div *ngIf="name.errors?.['required']">Name Required</div>
+          <div *ngIf="name.errors?.['minlength']">
+            Name must have atleast 3 characters
+          </div>
+        </div>
+    </div> -->
+       <div class="mb-4 input-field">
+      <label for="email"></label>   
+      <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+        #email="ngModel" placeholder="Enter Your Email" />
+      <div class="alert-danger" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">
+          Email must be a valid email address
+        </div>
+      </div>
+    </div>
+
+        
+    <div class="mb-4 input-field">
+      <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+        minlength="8" #password="ngModel" placeholder="**********" />
+      <div class="alert-danger" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+        <div *ngIf="password.errors?.['minlength']">
+          Password must be at least 8 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="input">
+      <div>
+        <input type="checkbox" name="" id="remember">
+        <label for="remember">Keep me signed in? </label>
+      </div>
+      <a href="#">forgot your password?</a>
+    </div>
+
+    <p class="terms">By Continue, you agree our <strong>Condition of use</strong> and <strong>Privacy Notice</strong>.</p>
+
+    <button class="btn signup mx-auto">Sign Up</button>
+
+    <div class="new-user">
+      <p>Already Have an Account?</p>
+      <a href="/login" class="btn create">Login</a>
+
+    </div>
+  </div>
+ </form>
+</div>

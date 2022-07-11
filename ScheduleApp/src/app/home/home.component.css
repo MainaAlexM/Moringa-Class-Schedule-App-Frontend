@@ -1,0 +1,27 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 0.2rem;
+    height: 20rem;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    font-size-adjust: 3rem;
+}
+.card-body{
+    background-color: rgb(243, 240, 244)
+}
+.btn{
+    background-color: #4A154B;
+    color: white;
+    border-radius: 0.4rem;
+    font-family: 'Times New Roman', Times, serif;
+}

@@ -1,0 +1,56 @@
+<div class="container">
+<form  (ngSubmit)="submitData(postForm.value)" #postForm="ngForm" class="w-50 mx-auto " >
+    <h1 class="text-center heading">Classroom Post Schedule </h1>
+    <!-- title -->
+<div class="mb-4">
+    <label for="exampleInputText" class="form-label">Title</label>
+    <input type="text" name="title" ngModel class="form-control" id="title" aria-describedby="">
+</div>
+
+<!-- description -->
+<div class="mb-4">
+    <label for="exampleInputText" class="form-label">Content</label>
+    <input type="text" name="name" ngModel class="form-control" id="name" aria-describedby="">
+</div>
+
+<!-- location -->
+<div class="mb-4">
+    <label for="exampleInputurl" class="form-label">Link</label>
+    <input type="url" name="meet_url" ngModel class="form-control" id="meet_url" aria-describedby="">
+</div>
+
+<!-- tm -->
+<div class="mb-4">
+    <label for="exampleInputurl" class="form-label">tm</label>
+    <input type="number" name="technical_mentor_id" ngModel class="form-control" id="technical_mentor_id" aria-describedby="">
+</div>
+<!-- mod -->
+<div class="mb-4">
+    <label for="exampleInputurl" class="form-label">module</label>
+    <input type="number" name="module_id" ngModel class="form-control" id="module_id" aria-describedby="">
+</div>
+
+<!-- date -->
+<div class="mb-4">
+    <label for="exampleInputurl" class="form-label">date</label>
+    <input type="date" name="date_of_session" ngModel class="form-control" id="date_of_session" aria-describedby="">
+</div>
+
+<!-- start time -->
+<div class="mb-4">
+    <label for="exampleInputText" class="form-label">Start Time</label>
+    <input type="text" name="start" ngModel class="form-control" id="start" aria-describedby="" placeholder="09:00:00">
+</div>
+
+<div class="mb-4">
+    <label for="exampleInputText" class="form-label">End Time </label>
+    <input type="text" name="end" ngModel class="form-control" id="end" aria-describedby="" placeholder="11:00:00">
+</div>
+
+<div class="row mb-4">
+    
+    </div>
+</form><div class="col text-center">
+    <button type="submit" class="btn">Add Schedule</button>
+    </div>
+</div>
