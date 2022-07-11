@@ -24,6 +24,7 @@ import { SignupComponent } from './signup/signup.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModuleComponent } from './module/module.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     SignupComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    ModuleComponent
   ],
   imports: [
     BrowserModule,

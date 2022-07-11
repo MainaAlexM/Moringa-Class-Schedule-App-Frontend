@@ -19,3 +19,9 @@ a:hover{
 .card-body{
     background-color: rgb(243, 240, 244)
 }
+.btn{
+    background-color: #4A154B;
+    color: white;
+    border-radius: 0.4rem;
+    font-family: 'Times New Roman', Times, serif;
+}
