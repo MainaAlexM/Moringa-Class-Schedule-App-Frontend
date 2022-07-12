@@ -1,15 +1,18 @@
 <div class="container">
-    <div class="module-form mx-auto">
-    <h2 class="title">Add New Module</h2>
-
-    <div class="input-field">
-        <label for="email">Student Email</label>
-        <input type="email" placeholder="Enter student email address" name="email" id="email">
     
-    </div>
+    <form #loginForm="ngForm" (ngSubmit)="submitData(loginForm.value)" class="form">
+        <div class="module-form mx-auto">
+            <h2 class="title">Add New Module</h2>
+        
+            <div class="input-field">
+                <label for="text">Module Name</label>
+                <input type="text" placeholder="New Module Name" name="module" id="module">
+            
+            </div>
+        
+            <button type="submit" class="btn login mx-auto">Add</button>
+        
+        </div>
+    </form>
 
-
-        <button class="btn login mx-auto">Submit</button>
-
-    </div>
 </div>
