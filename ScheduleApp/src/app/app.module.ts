@@ -2,6 +2,12 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
+<<<<<<< HEAD
+// import { ScheduleService } from './service/schedule.service';
+import { FormsModule } from '@angular/forms';
+
+=======
+>>>>>>> 3360afd6a03dd7ea9df12c06c07697a2b4ff5026
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScheduleService } from './schedule.service';
