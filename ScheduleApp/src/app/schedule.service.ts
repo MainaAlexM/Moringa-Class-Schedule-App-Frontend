@@ -10,12 +10,10 @@ import { Schedule } from './class/schedule'
 })
 export class ScheduleService {
 
-readonly APIurl = `https://class-scheduleapp.herokuapp.com`
+private APIurl = `https://class-scheduleapp.herokuapp.com`
 
-  constructor(
-    private http: HttpClient
-  ) { }
 
+  constructor(private http: HttpClient) { }
 
 
 getComments(): Observable<any[]> {
