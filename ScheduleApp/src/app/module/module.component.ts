@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScheduleService } from '../schedule.service';
 
 @Component({
   selector: 'app-module',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModuleComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor(private service: ScheduleService) { }
 
   ngOnInit(): void {
+  }
+
+  submitData(value: any) {
+    let body = {
+      name: value.name,
+    }
+
+    this.service.postModule(body)
+      .subscribe(response => {
+        console.log(response)
+      })
   }
 
 }
