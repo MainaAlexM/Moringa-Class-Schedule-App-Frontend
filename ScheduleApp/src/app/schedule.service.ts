@@ -10,24 +10,24 @@ import { Schedule } from './class/schedule'
 })
 export class ScheduleService {
 
-readonly APIurl = `https://class-scheduleapp.herokuapp.com`
-
-  constructor(
-    private http: HttpClient
-  ) { }
+private APIurl = `https://class-scheduleapp.herokuapp.com`
 
 
+  constructor(private http: HttpClient) { }
 
+//  Get all Comments
 getComments(): Observable<any[]> {
   
   return this.http.get<any[]>(`${this.APIurl}/comments/`)
 }
 
+// Get all Modules
 getModules(): Observable<any[]> {
     
   return this.http.get<any[]>(`${this.APIurl}/modules/`)
 }
 
+// Get a Profile
 getProfile(): Observable<any[]> {
     
   return this.http.get<any['5']>(`${this.APIurl}/api/user/5/profile/`)
@@ -35,18 +35,14 @@ getProfile(): Observable<any[]> {
 }
 
 
-// Post
-
-postData(val: any){
-  return this.http.post(`${this.APIurl}/post`, val)
+// Post a Module
+postModule(data: any): Observable<any[]> {
+  return this.http.post<any[]>(`${this.APIurl}/modules/`, data)
 }
 
-// submitData(val: any){
-//   return this.http.post(`${this.APIurl}/api/user/5/update/profile/`, val)
-// }
-
-updateProfile(val: any){
-  return this.http.put<any['5']>(`${this.APIurl}/api/user/5/update/profile/`, val)
+// Update Profile
+updateProfile(data: any): Observable<any[]> {
+  return this.http.put<any[]>(`${this.APIurl}/api/user/5/update/profile/`, data)
 }
 
 
