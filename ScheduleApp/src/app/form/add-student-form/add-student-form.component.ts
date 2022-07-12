@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ScheduleService } from 'src/app/schedule.service';
 
 @Component({
   selector: 'app-add-student-form',
@@ -9,9 +10,21 @@ import { Observable } from 'rxjs';
 })
 export class AddStudentFormComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private service:ScheduleService) { }
+
+  personalModules:any=[];
 
   ngOnInit(): void {
+    // Get Available Modules Posted by TM
+    this.service.getMyModules()
+    .subscribe(
+      data=>{
+        this.personalModules=data
+      }
+    );
+
+    }
+
 
     // submitData(value: any) {
     //   let body = {
@@ -26,6 +39,3 @@ export class AddStudentFormComponent implements OnInit {
     // }
 
   }
-
-
-}

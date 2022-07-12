@@ -31,9 +31,14 @@ getModules(): Observable<any[]> {
 getProfile(): Observable<any[]> {
     
   return this.http.get<any['5']>(`${this.APIurl}/api/user/5/profile/`)
-  // A method to get the user id and add it to the path as an argument (id)
+  // Needs a method to get the user id and add it to the path as an argument (id)
 }
 
+  // Get My modules based on Profile
+getMyModules(): Observable<any[]> {
+    
+  return this.http.get<any['4']>(`${this.APIurl}/api/technical-mentor/4/modules/`)
+}
 
 // Post a Module
 postModule(data: any): Observable<any[]> {
@@ -46,6 +51,10 @@ updateProfile(data: any): Observable<any[]> {
 }
 
 
+getModuleSessions(): Observable<any[]> {
+    
+  return this.http.get<any['1']>(`${this.APIurl}/api/module/1/sessions/`)
+}
 
 }
 
