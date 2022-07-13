@@ -56,5 +56,11 @@ getModuleSessions(): Observable<any[]> {
   return this.http.get<any['1']>(`${this.APIurl}/api/module/1/sessions/`)
 }
 
+// Get announcements
+getAnnouncements(): Observable<any[]> {
+    
+  return this.http.get<any[]>(`${this.APIurl}/api/announcements/`)
+}
+
 }
 

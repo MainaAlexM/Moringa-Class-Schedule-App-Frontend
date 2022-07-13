@@ -14,6 +14,7 @@ export class HomeComponent implements  OnInit{
   constructor(private service:ScheduleService) { }
 
   personalModules:any=[];
+  announcements:any=[];
 
   ngOnInit(): void {
     this.service.getMyModules()
@@ -22,8 +23,16 @@ export class HomeComponent implements  OnInit{
           this.personalModules=data
         }
       );
+
+
+      this.service.getAnnouncements()
+      .subscribe(
+        data=>{
+          this.announcements=data
+        }
+      );
     }
   
   }
-
+  
   
