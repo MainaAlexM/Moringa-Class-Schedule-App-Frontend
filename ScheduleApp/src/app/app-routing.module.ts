@@ -14,7 +14,7 @@ import { SessionSchComponent } from './session-sch/session-sch.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ModuleComponent } from './module/module.component';
-
+import { ScheduleDetailsComponent } from './schedule-details/schedule-details.component'
 
 const routes: Routes = [
   { path: "tm", component: TmProfileComponent},
@@ -30,6 +30,8 @@ const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
   { path: 'search', component: SearchComponent },
   { path: 'module', component: ModuleComponent },
+  { path: "details", component:ScheduleDetailsComponent },
+
 ];
 
 @NgModule({

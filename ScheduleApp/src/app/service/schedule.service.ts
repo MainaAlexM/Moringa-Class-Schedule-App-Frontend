@@ -30,5 +30,9 @@ export class ScheduleService {
     return this.http.delete(this.ApiUrl + '/sessions/' + val,
     { headers: this.httpHeaders });
   }
+
+  getModuleSessions(): Observable<any[]> {
+    return this.http.get<any['1']>(`${this.ApiUrl}/api/module/1/sessions/`)
+  }
   
 }
