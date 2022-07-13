@@ -40,10 +40,10 @@ export class NavComponent implements OnInit {
       this.name = user.name;
       this.isAuthenticated = true;
     }
-    this.currentUser = this.tokenStorageService.getUser();
-    return this.http.get(`${API_URL}/api/user/current/`,httpOptions).subscribe(data => {
-      this.data=data
-    });
+    // this.currentUser = this.tokenStorageService.getUser();
+    // return this.http.get(`${API_URL}/api/user/current/`,httpOptions).subscribe(data => {
+    //   this.data=data
+    // });
 
  
     
