@@ -12,13 +12,14 @@
           <h3 class="text-center fs-3 logo fw-bold mb-4">Sign In</h3>
           <div class="form-group">
             <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
-              Incorrect Username or Password {{ errorMessage }}
+              Incorrect Email or Password {{ errorMessage }}
             </div>
           </div>
           
           <div class="mb-4">
             <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
               #email="ngModel" placeholder="Email" />
+
             <div class="alert-danger" *ngIf="email.errors && f.submitted">
               <div *ngIf="email.errors?.['required']">Email is required</div>
               <div *ngIf="email.errors?.['email']">
@@ -43,7 +44,7 @@
           </div>
 
           <div class="pt-2">
-            <p class="mb-3 pb-lg-2">Don't have an account? <a href="donor-register" class="text-decoration-none"
+            <p class="mb-3 pb-lg-2">Don't have an account? <a href="signup" class="text-decoration-none"
                 style="color: #ed5e46;">Register here</a></p>
             <a href="#!" class="small text-muted">Terms of use.</a>
             <a href="#!" class="small text-muted">Privacy policy</a>

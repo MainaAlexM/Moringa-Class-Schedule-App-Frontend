@@ -9,7 +9,7 @@ const httpOptions = {
   headers:new HttpHeaders({ 'Content-Type': 'application/json'})
 };
 // const API_URL = 'http://127.0.0.1:8000/';
-const API_URL = "http://funds-flow.herokuapp.com/";
+const API_URL = "https://class-scheduleapp.herokuapp.com";
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -17,15 +17,16 @@ const API_URL = "http://funds-flow.herokuapp.com/";
 })
 export class NavComponent implements OnInit {
   isLoggedIn = false;
-  username?: string;
+  name?: string;
   isAuthenticated = false;
-  is_staff = false;
+  is_TM = false;
+  is_STU = false;
 
   status?: boolean;
   userdetail: any;
   currentUser:any
   data:any
-  is_donor?:boolean
+  // is_TM?:boolean
   constructor(
     private tokenStorageService: TokenStorageService,
     public userService: UserService,
@@ -36,11 +37,11 @@ export class NavComponent implements OnInit {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
-      this.username = user.username;
+      this.name = user.name;
       this.isAuthenticated = true;
     }
     this.currentUser = this.tokenStorageService.getUser();
-    return this.http.get(API_URL + 'users/' + this.currentUser.id + '/',httpOptions).subscribe(data => {
+    return this.http.get(`${API_URL}/api/user/current/`,httpOptions).subscribe(data => {
       this.data=data
     });
 

@@ -13,10 +13,7 @@ export class SignupComponent implements OnInit {
   form: any = {
     username:null,
     email:null,
-    last_name:null,
-    first_name:null,
-    password1:null,
-    password2:null,
+    password:null,
 
   };
 
@@ -33,7 +30,7 @@ export class SignupComponent implements OnInit {
   onSubmit(): void {
     const {username, email, password,} = this.form;
     this.authService.register(username, email,password,).subscribe(
-      data => {
+        data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;

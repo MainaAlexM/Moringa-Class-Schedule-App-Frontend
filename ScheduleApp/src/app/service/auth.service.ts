@@ -13,16 +13,16 @@ const httpOptions = {
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  login(username: string, password: string):Observable<any> {
+  login(email: string, password: string):Observable<any> {
     // return this.http.post(APIurl + 'signin/', {
-      return this.http.post(APIurl + '/api/user/login/', {
-      username,
+      return this.http.post(`${APIurl}/api/user/login/`, {
+      email,
       password
     }, httpOptions);
   }
-  register(username: string, email:string,password: string):Observable<any> {
-    return this.http.post(APIurl + '/api/user/create/', {
-      username,
+  register(username: string, email:string, password: string):Observable<any> {
+    return this.http.post(`${APIurl}/api/user/create/`, {
+      name:username,
       email,
       password,
     }, httpOptions);

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ScheduleService } from '../schedule.service';
-import { Schedule } from '../class/schedule';
+import { TokenStorageService } from '../service/token-storage.service';
+import { Token } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { Schedule } from '../class/schedule';
 export class HomeComponent implements  OnInit{
   title = 'ScheduleApp';
 
-  constructor(private service:ScheduleService) { }
+  constructor(private service:ScheduleService, private AuthService: TokenStorageService) { }
 
   personalModules:any=[];
   announcements:any=[];
@@ -31,6 +32,7 @@ export class HomeComponent implements  OnInit{
           this.announcements=data
         }
       );
+
     }
   
   }
