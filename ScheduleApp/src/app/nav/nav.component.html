@@ -16,13 +16,17 @@
             <ul class="nav navbar-nav ms-auto">
                 
                 <li class="nav-item active">
-                    <a class="nav-link" href="login" id="login">Log In</a>
+                    <a class="pt-1 mb-4" href="login"  *ngIf="!isAuthenticated">
+                        <button type="submit" class="btn btn-lg btn-block text-decoration-none" style="background-color:#efc94c" type="button">Login</button>
+              
+                    </a>
+
+                    <a class="pt-1 mb-4" href="login"  *ngIf="isAuthenticated">
+                        <button type="submit" class="btn btn-lg btn-block" style="background-color:#efc94c"(click)="logout()" type="button">Log Out</button>
+                    </a>
+                    
                 </li>
 
-                <li class="nav-item active">
-                    <a class="nav-link" href='signup'>Sign Up</a>
-                </li>
-            
             </ul>
         </div>
     </div>
