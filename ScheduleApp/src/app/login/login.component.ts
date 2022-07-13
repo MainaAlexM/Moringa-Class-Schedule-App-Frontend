@@ -10,7 +10,7 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 })
 export class LoginComponent implements OnInit {
   form: any = {
-    email:null,
+    username:null,
     password:null,
   };
 
@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
 
   }
   onSubmit(): void {
-    const {email, password} = this.form;
-    this.authService.login(email, password).subscribe(
+    const {username, password} = this.form;
+    this.authService.login(username, password).subscribe(
       data => {
         console.log(data);
         this.tokenStorage.saveToken(data.token);
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           window.location.reload();
         });        
         
-        // alert(data.response_msg)
+        alert(data.response_msg)
         console.log(data)
         
       },
@@ -47,7 +47,5 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = true
       });
   }
-
-
 
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MaxLengthValidator } from '@angular/forms';
 import { ScheduleService } from '../schedule.service';
+562
+
+import { FormsModule }   from '@angular/forms';
 
 @Component({
   selector: 'app-module',
