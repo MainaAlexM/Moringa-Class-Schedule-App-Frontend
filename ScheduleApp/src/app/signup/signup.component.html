@@ -5,11 +5,31 @@
     name="form"
     (ngSubmit)="f.form.valid && onSubmit()"
     #f="ngForm"
-    novalidate
+    validate
   >
     <div class="signup-form mx-auto">
       <h2 class="title">Create Account</h2>
+      <div class="mb-4 input-field">
+        <label for="name"></label>
+        <input
+          type="text"
+          class="form-control"
+          name="form.name_"
+          [(ngModel)]="form.name_"
+          required
+          name_
+          #name_="ngModel"
+          placeholder="Enter Your Name"
+        />
+        <!-- <div class="alert-danger" *ngIf="name_.errors && f.submitted">
+          <div *ngIf="name_.errors?.['required']">Name is required</div>
+          <div *ngIf="name_.errors?.['name_']">
+            Name must be a valid email address
+          </div>
+        </div> -->
+      </div>
 
+      
       <div class="mb-4 input-field">
         <label for="email"></label>
         <input
@@ -22,12 +42,12 @@
           #email="ngModel"
           placeholder="Enter Your Email"
         />
-        <div class="alert-danger" *ngIf="email.errors && f.submitted">
+        <!-- <div class="alert-danger" *ngIf="email.errors && f.submitted">
           <div *ngIf="email.errors?.['required']">Email is required</div>
           <div *ngIf="email.errors?.['email']">
             Email must be a valid email address
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="mb-4 input-field">
@@ -41,12 +61,12 @@
           #password="ngModel"
           placeholder="**********"
         />
-        <div class="alert-danger" *ngIf="password.errors && f.submitted">
+        <!-- <div class="alert-danger" *ngIf="password.errors && f.submitted">
           <div *ngIf="password.errors?.['required']">Password is required</div>
           <div *ngIf="password.errors?.['minlength']">
             Password must be at least 8 characters
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="input">

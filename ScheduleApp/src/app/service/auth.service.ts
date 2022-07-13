@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 // const AUTH_API = "http://class-scheduleapp.herokuapp.com/";
@@ -16,14 +17,17 @@ const httpOptions = {
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router:Router) { }
   login(email: string, password: string) {
     // return this.http.post(AUTH_API + 'signin/', {
       this.http.post('http://127.0.0.1:8000/api/user/login/', {
       email,
       password
     }, httpOptions).subscribe(res=>{
+      console.log(res);
+      
       window.localStorage.setItem('auth_user',JSON.stringify(res))
+      this.router.navigate(["/"])
     })
   }
   register(name: string, email:string,password: string,):Observable<any> {
@@ -51,5 +55,10 @@ export class AuthService {
   getLoginStatus():boolean{
     console.log(this.getUser())
     return this.getUser() ? true : false
+  }
+
+  logOut():void{
+    window.localStorage.removeItem('auth_user')
+    this.router.navigate(["/login"])
   }
 }

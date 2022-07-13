@@ -15,11 +15,7 @@ const httpOptions = {
 })
 export class ScheduleService {
 
-readonly APIurl = `https://class-scheduleapp.herokuapp.com`
-
-  constructor(
-    private http: HttpClient
-  ) { }
+private APIurl = `https://class-scheduleapp.herokuapp.com`
 
 postComment(id:string,student:string,comment: string,likes:string,session:string,session_id:any):Observable<any> {
   // return this.http.post(AUTH_API + 'signin/', {
@@ -30,7 +26,9 @@ postComment(id:string,student:string,comment: string,likes:string,session:string
   }, httpOptions).pipe(res=>res);
 }
 
+  constructor(private http: HttpClient) { }
 
+//  Get all Comments
 getComments(): Observable<any[]> {
   
   return this.http.get<any[]>(`http://127.0.0.1:8000/comments/`)
@@ -47,28 +45,40 @@ getModules(): Observable<any[]> {
   return this.http.get<any[]>(`${this.APIurl}/modules/`)
 }
 
+// Get a Profile
 getProfile(): Observable<any[]> {
     
   return this.http.get<any['5']>(`${this.APIurl}/api/user/5/profile/`)
-  // A method to get the user id and add it to the path as an argument (id)
+  // Needs a method to get the user id and add it to the path as an argument (id)
+}
+
+  // Get My modules based on Profile
+getMyModules(): Observable<any[]> {
+    
+  return this.http.get<any['4']>(`${this.APIurl}/api/technical-mentor/4/modules/`)
+}
+
+// Post a Module
+postModule(data: any): Observable<any[]> {
+  return this.http.post<any[]>(`${this.APIurl}/modules/`, data)
+}
+
+// Update Profile
+updateProfile(data: any): Observable<any[]> {
+  return this.http.put<any[]>(`${this.APIurl}/api/user/5/update/profile/`, data)
 }
 
 
-// Post
-
-postData(val: any){
-  return this.http.post(`${this.APIurl}/post`, val)
+getModuleSessions(): Observable<any[]> {
+    
+  return this.http.get<any['1']>(`${this.APIurl}/api/module/1/sessions/`)
 }
 
-// submitData(val: any){
-//   return this.http.post(`${this.APIurl}/api/user/5/update/profile/`, val)
-// }
-
-updateProfile(val: any){
-  return this.http.put<any['5']>(`${this.APIurl}/api/user/5/update/profile/`, val)
+// Get announcements
+getAnnouncements(): Observable<any[]> {
+    
+  return this.http.get<any[]>(`${this.APIurl}/api/announcements/`)
 }
-
-
 
 }
 

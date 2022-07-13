@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class SignupComponent implements OnInit {
   form: any = {
-    name:null,
+    name_:null,
     email:null,
     password:null,
     // password2:null,
@@ -29,8 +29,10 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const {name, email, password} = this.form;
-    this.authService.register(name, email,password).subscribe(
+    const {name_, email, password} = this.form;
+    console.log(this.form);
+    
+    this.authService.register(name_, email,password).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
@@ -39,7 +41,8 @@ export class SignupComponent implements OnInit {
       },
       err => {
         this.errorMessage = err.error.message;
-        alert(err)
+        console.log(err)
+        // alert(err)
         this.isSignUpFailed = true
       });
   }

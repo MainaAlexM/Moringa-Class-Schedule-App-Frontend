@@ -13,15 +13,26 @@ export class HomeComponent implements  OnInit{
 
   constructor(private service:ScheduleService) { }
 
-  myModules:any=[];
+  personalModules:any=[];
+  announcements:any=[];
 
   ngOnInit(): void {
-    this.service.getModules()
+    this.service.getMyModules()
       .subscribe(
         data=>{
-          this.myModules=data
+          this.personalModules=data
+        }
+      );
+
+
+      this.service.getAnnouncements()
+      .subscribe(
+        data=>{
+          this.announcements=data
         }
       );
     }
   
   }
+  
+  

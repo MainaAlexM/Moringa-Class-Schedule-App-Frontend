@@ -12,7 +12,11 @@
 <!-- student module -->
 <div class="mb-3">
     <label for="exampleInputText" class="form-label">Student Module </label>
-    <input type="text" class="form-control" id="exampleInputText" aria-describedby="">
+    <select name="module" id="module" class="form-control"> 
+        <option value="select">-Select Module</option>
+        <option *ngFor="let mod of personalModules" value="{{mod.name}}" id="{{mod.id}}" >{{mod.name}} </option>
+        
+    </select>
 </div>
 
 <!-- submit -->
