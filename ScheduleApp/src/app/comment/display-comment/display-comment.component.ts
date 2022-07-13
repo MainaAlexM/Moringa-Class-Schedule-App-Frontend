@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 // import { ActivatedRoute } from '@angular/router';
-import { ScheduleService } from './schedule.service';
-import { Schedule } from './class/schedule'
+import { ScheduleService } from '../../schedule.service';
+import { Schedule } from '../../class/schedule'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-display-comment',
+  templateUrl: './display-comment.component.html',
+  styleUrls: ['./display-comment.component.css']
 })
+export class DisplayCommentComponent implements OnInit {
 
-export class AppComponent {
   title = 'ScheduleApp';
 
   form:any={
@@ -35,5 +35,6 @@ export class AppComponent {
   
     
   }
-  
+
 }
+

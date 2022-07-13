@@ -1,0 +1,16 @@
+
+
+
+
+<div class="card p-4">
+    <div *ngFor="let session of listssessions">
+        <p class="">{{session.id }}</p>
+        <p class="">{{session.title }}</p>
+       <a href="{{session.meet_url }}">{{session.meet_url }}</a> 
+       <div class="col-md-5 text-center">
+        <a href="/comment/{{session.id}}"><button type="submit" class="btn btn-primary">New Comment</button></a>
+    </div>
+    <app-display-comment></app-display-comment>
+</div>
+      
+</div>

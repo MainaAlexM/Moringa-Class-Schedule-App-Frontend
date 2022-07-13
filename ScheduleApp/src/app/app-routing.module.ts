@@ -14,6 +14,8 @@ import { SessionSchComponent } from './session-sch/session-sch.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ModuleComponent } from './module/module.component';
+import { CommentComponent } from './comment/comment.component';
+import { DisplayCommentComponent } from './comment/display-comment/display-comment.component';
 
 
 const routes: Routes = [
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
   { path: 'search', component: SearchComponent },
   { path: 'module', component: ModuleComponent },
+  { path: 'comment/:session_id', component: CommentComponent },
+  { path: 'display_comments', component: DisplayCommentComponent },
 ];
 
 @NgModule({

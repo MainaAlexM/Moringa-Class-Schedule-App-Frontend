@@ -1,0 +1,17 @@
+<div class="container">
+    <form class="form-control p-5 h-95" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm" novalidate>
+    <div class="signup-form mx-auto">
+      <h2 class="title">Create Comment</h2>
+         <div class="mb-4 input-field">
+        <label for="comment"></label>   
+        <input type="text" class="form-control" name="comment" [(ngModel)]="form.comment" required comment
+          #comment="ngModel" placeholder="Enter Your Comment" />
+        <div class="alert-danger" *ngIf="comment.errors && f.submitted">
+          <div *ngIf="comment.errors?.['required']">Comment is required</div>
+        </div>
+      </div> 
+      <button class="btn signup mx-auto">Comment</button>     
+    </div>
+   </form>
+  </div>

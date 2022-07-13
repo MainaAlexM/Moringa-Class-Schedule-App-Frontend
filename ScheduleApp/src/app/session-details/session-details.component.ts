@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ScheduleService } from '../schedule.service';
+import { Schedule } from '../class/schedule'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+
+
 
 @Component({
   selector: 'app-session-details',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionDetailsComponent implements OnInit {
 
-  constructor() { }
+   
+  constructor(private _ScheduleService: ScheduleService,
+    private http: HttpClient,
+    ) { }
+
+  listssessions : Schedule [] = [];
+  // objcomments!: Schedule;
 
   ngOnInit(): void {
+    this._ScheduleService.getSessions()
+    .subscribe(
+      data=>{
+        this.listssessions=data
+        console.log(data);
+        
+      }
+    );
+  
+    
+  }
   }
 
-}

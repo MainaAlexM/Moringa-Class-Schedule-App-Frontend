@@ -25,6 +25,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModuleComponent } from './module/module.component';
+import { CommentComponent } from './comment/comment.component';
+import { DisplayCommentComponent } from './comment/display-comment/display-comment.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { ModuleComponent } from './module/module.component';
     SignupComponent,
     SidebarComponent,
     FooterComponent,
-    ModuleComponent
+    ModuleComponent,
+    CommentComponent,
+    DisplayCommentComponent
   ],
   imports: [
     BrowserModule,

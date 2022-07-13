@@ -17,15 +17,17 @@ const httpOptions = {
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  login(email: string, password: string):Observable<any> {
+  login(email: string, password: string) {
     // return this.http.post(AUTH_API + 'signin/', {
-      return this.http.post('http://class-scheduleapp.herokuapp.com/api/user/login/', {
+      this.http.post('http://127.0.0.1:8000/api/user/login/', {
       email,
       password
-    }, httpOptions);
+    }, httpOptions).subscribe(res=>{
+      window.localStorage.setItem('auth_user',JSON.stringify(res))
+    })
   }
   register(name: string, email:string,password: string,):Observable<any> {
-    return this.http.post('http://class-scheduleapp.herokuapp.com/api/user/create/', {
+    return this.http.post('http://127.0.0.1:8000/api/user/create/', {
       name,
       email,
       password,
@@ -33,5 +35,21 @@ export class AuthService {
 
     }, httpOptions);
   }
-
+ 
+  getUser():any{
+    const localStorage=window.localStorage
+  console.log(localStorage.getItem("auth_user"));
+  
+    if (localStorage.getItem("auth_user")){
+      let user=localStorage.getItem("auth_user")
+      return JSON.parse(user || "{}")
+    }
+    else{
+      return null
+    }
+  }
+  getLoginStatus():boolean{
+    console.log(this.getUser())
+    return this.getUser() ? true : false
+  }
 }

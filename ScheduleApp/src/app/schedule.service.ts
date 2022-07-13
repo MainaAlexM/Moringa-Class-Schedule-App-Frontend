@@ -5,6 +5,11 @@ import { Schedule } from './class/schedule'
 // import { environment } from 'src/environments/environment';
 
 
+const httpOptions = {
+  headers:new HttpHeaders({ 'Content-Type': 'application/json'})
+};
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,12 +21,26 @@ readonly APIurl = `https://class-scheduleapp.herokuapp.com`
     private http: HttpClient
   ) { }
 
+postComment(id:string,student:string,comment: string,likes:string,session:string,session_id:any):Observable<any> {
+  // return this.http.post(AUTH_API + 'signin/', {
+    return this.http.post('http://127.0.0.1:8000/comments/', {
+    comment,
+    session:parseInt(session_id),
+    student:parseInt(student)
+  }, httpOptions).pipe(res=>res);
+}
 
 
 getComments(): Observable<any[]> {
   
-  return this.http.get<any[]>(`${this.APIurl}/comments/`)
+  return this.http.get<any[]>(`http://127.0.0.1:8000/comments/`)
 }
+
+getSessions(): Observable<any[]> {
+  
+  return this.http.get<any[]>('http://127.0.0.1:8000/sessions/')
+}
+
 
 getModules(): Observable<any[]> {
     
@@ -52,4 +71,6 @@ updateProfile(val: any){
 
 
 }
+
+
 
