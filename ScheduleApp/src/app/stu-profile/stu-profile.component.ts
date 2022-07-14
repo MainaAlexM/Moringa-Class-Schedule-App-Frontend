@@ -11,13 +11,15 @@ export class StuProfileComponent implements OnInit {
 
   constructor(private service:ScheduleService) { }
   
-  profile:any=[]
+  profile:any;
+  user_id:any;
   
   ngOnInit(): void {
-    this.service.getProfile()
+    this.service.getProfile(this.user_id)
     .subscribe(
       data=>{
         this.profile=data
+        console.log(this.profile)
       }
     );
     }
