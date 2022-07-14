@@ -1,0 +1,32 @@
+<head>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head> 
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid d-flex">
+        <div class="buttons">
+            <button type="button" id="sidebarCollapse" class="btn btn-sm btn" style="background-color:#4A154B; color:white;">
+                <i class="fa fa-bars" aria-hidden="true"> ClassApp</i>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse container ml-auto" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ms-auto">
+                
+                <li class="nav-item active">
+                    <a class="pt-1 mb-4" href="login"  *ngIf="!isAuthenticated">
+                        <button type="submit" class="btn btn-lg btn-block text-decoration-none" type="button">Login</button>
+                    </a>
+
+                    <a class="pt-1 mb-4" href="login"  *ngIf="isAuthenticated">
+                        <button type="submit" class="btn btn-lg btn-block"(click)="logout()" type="button">Log Out</button>
+                    </a>
+                    
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

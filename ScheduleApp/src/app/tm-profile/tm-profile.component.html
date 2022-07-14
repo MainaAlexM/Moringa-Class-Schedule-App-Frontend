@@ -1,0 +1,69 @@
+<div class="row my-3">
+    <div class="card" style="width: 18rem; height: 18rem;">
+        <img src="{{profile.profile_image}}" class="rounded-circle" style="width: 100px; height: 100px;" alt="Avatar" class="card-img-top mx-auto" alt="...">
+        <div class="card-body">
+            
+            <h5 class="card-title">Name: {{profile.user.name}} </h5>
+            <p class="card-text"><span class="prof-info text-start">Bio: </span>&nbsp; <a href="mailto:{{profile.user.email}}">{{profile.user.email}} </a></p>
+            <p class="bio my-2"><span class="prof-info text-start">Bio: </span>&nbsp;&nbsp; {{profile.bio}}</p>
+
+        
+        </div>
+    </div>
+
+    <div class="editing py-3 col-md-8 border-start px-5 border-success">
+        <h2 class="text-center">Mentor's Profile Settings</h2>
+        <!-- <p class="text-center my-3">Edit Your Profile Information and Icon Here</p> -->
+
+        <hr>
+        <!-- User Creation form -->
+        <div class="container mt-5">
+            <form (ngSubmit)="submitData(postForm.value)" #postForm="ngForm" class=" mx-auto">
+                <h4 class="text-center"> Edit Personal Information </h4>
+            
+                <!-- Name -->
+                <label for="exampleInputemail" class="form-label"> Name </label>
+                <div class="names">
+                    <div class="mb-3 name-input">
+                        <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Firstname" aria-describedby="">
+                    </div>
+                </div>
+
+                <!-- Image Input -->
+                <div class="image">
+                    <label for="profile_image">Choose a profile picture:</label>
+
+                    <input type="file" id="profile_image" name="profile_image" ngModel class="form-control" accept="image/png, image/jpeg">
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label"> Email Address </label>
+                    <input type="email" class="form-control" id="email" name="email" readonly value="{{profile.user.email}} " aria-describedby="">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="user_type" class="form-label"> Role </label>
+                    <input class="form-control" type="text" name="user_type" id="user_type" placeholder="TM" readonly value="{{profile.user.user_type}}">
+                </div>
+                <!-- Bio -->
+                <div class="mb-3">
+                    <label for="bio"> Bio </label>
+                    <textarea class="form-control" name="bio" ngModel id="bio" placeholder="Write your bio here" rows="3"></textarea>
+                </div>
+                
+                <!-- submit -->
+                <div class="row mb-5">
+                    <div class="col text-center">
+                        <button type="submit" class="btn"> Submit </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- <p class="name my-2"><span class="prof-info">Name/Role: </span>&nbsp; &nbsp;  {{info.user.email}}</p> -->

@@ -1,0 +1,41 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 0.2rem;
+    height: 20rem;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    font-size-adjust: 3rem;
+}
+.card-body{
+    background-color: rgb(243, 240, 244)
+}
+.btn{
+    background-color: #4A154B;
+    color: white;
+    border-radius: 0.4rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.announcements{
+    /* overflow-x: hidden; */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    padding: .5rem;
+    padding-bottom: 1rem;
+}
+ul li{
+    list-style-type:square;
+    padding:.1rem;
+}
+ul li a{
+    color: #38032b;
+
+}

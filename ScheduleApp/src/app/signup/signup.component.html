@@ -1,0 +1,62 @@
+<div class="container">
+  <form class="form-control p-3" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm" novalidate>
+  <div class="signup-form mx-auto">
+    <h2 class="title">Create Account</h2>
+    <!-- username -->
+    <div class="mb-2 input-field">
+      <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
+        maxlength="20" #username="ngModel" placeholder="Username" />
+      <div class="alert-danger" *ngIf="username.errors && f.submitted">
+        <div *ngIf="username.errors?.['required']">Username is required</div>
+        <div *ngIf="username.errors?.['minlength']">
+          Username must be at least 3 characters
+        </div>
+        <div *ngIf="username.errors?.['maxlength']">
+          Username must be at most 20 characters
+        </div>
+      </div>
+    </div>
+    <!-- email -->
+    <div class="mb-2 input-field">
+      <label for="email"></label>   
+      <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+        #email="ngModel" placeholder="Enter Your Email" />
+      <div class="alert-danger" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">
+          Email must be a valid email address
+        </div>
+      </div>
+    </div>
+    <!-- password -->
+    <div class="mb-2 input-field">
+      <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+        minlength="8" #password="ngModel" placeholder="**********" />
+      <div class="alert-danger" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+        <div *ngIf="password.errors?.['minlength']">
+          Password must be at least 8 characters
+        </div>
+      </div>
+    </div>
+    <!-- inputs -->
+    <div class="input">
+      <div>
+        <input type="checkbox" name="" id="remember">
+        <label for="remember">Keep me signed in? </label>
+      </div>
+      <a href="#">forgot your password?</a>
+    </div>
+
+    <p class="terms">By Continue, you agree our <strong>Condition of use</strong> and <strong>Privacy Notice</strong>.</p>
+<!-- signup button -->
+    <button class="btn signup mx-auto">Sign Up</button>
+    <!-- login if you have an account -->
+    <div class="new-user">
+      <p>Already Have an Account?</p>
+      <a href="/login" class="btn create">Login</a>
+    </div>
+  </div>
+</form>
+</div>
