@@ -11,6 +11,11 @@ body {
 
 }
 
+.btn{
+    background-color: white;
+    color: #4A154B;
+}
+
 a,
 a:hover,
 a:focus {

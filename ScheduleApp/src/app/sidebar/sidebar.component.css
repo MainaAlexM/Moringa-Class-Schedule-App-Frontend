@@ -23,6 +23,12 @@ a:focus {
   transition: all 0.3s;
 }
 
+#sidebar{
+    
+   
+    position: fixed;
+    
+}
 .navbar {
   padding: 20px 10px;
   background-color: #35495e;
