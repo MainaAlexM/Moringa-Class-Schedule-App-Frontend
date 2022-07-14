@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScheduleService } from 'src/app/service/schedule.service';
+import { ScheduleService } from 'src/app/schedule.service';
 
 @Component({
   selector: 'app-update-form',
@@ -8,10 +8,10 @@ import { ScheduleService } from 'src/app/service/schedule.service';
 })
 export class UpdateFormComponent implements OnInit {
 
-  constructor(private _ScheduleService: ScheduleService) { }
+  constructor(private service: ScheduleService) { }
 
   ngOnInit(): void {
-    this._ScheduleService.getSchedules()
+    this.service.getSchedules()
       .subscribe(data => {
         console.log(data)
       })
@@ -28,7 +28,7 @@ export class UpdateFormComponent implements OnInit {
       module_id: value.module_id,
       date_of_session: value.date_of_session
     }
-    this._ScheduleService.updateSchedules(body)
+    this.service.updateSchedules(body)
       .subscribe(response => {
         console.log(response)
       })

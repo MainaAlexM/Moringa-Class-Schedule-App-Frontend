@@ -1,12 +1,16 @@
 <div class="container mt-5">
-<form action="" class="w-75 mx-auto">
+<form  class="w-75 mx-auto">
 <h2 class="text-center"> Add Student </h2>
 <hr>
 
 <!-- add student -->
 <div class="mb-3">
     <label for="exampleInputemail" class="form-label">Student Email </label>
-    <input type="email" class="form-control" id="exampleInputemail" aria-describedby="">
+    <select name="email" id="email" class="form-control"> 
+        <option value="select">-Select student By Email Address</option>
+        <option *ngFor="let mail of allStudents" value="{{mail.email}}" id="{{mail.email}}" >{{mail.email}} </option>
+        
+    </select>
 </div>
 
 <!-- student module -->
@@ -27,3 +31,13 @@
 </div>
 </form>
 </div>
+
+
+<!-- <form class="form-inline" (ngSubmit)="HelloCorp(f)" #f="ngForm">
+    <div class="select">
+    <select class="form-control col-lg-8" #corporation name="selectedCorp" required>
+        <option *ngFor="let corporation of corporations" [value]="corporation">{{corporation.corp_name}}</option>
+    </select>
+    <button type="submit" class="btn btn-primary manage">Submit</button>
+    </div>
+</form> -->

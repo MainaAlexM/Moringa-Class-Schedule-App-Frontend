@@ -20,14 +20,21 @@
 </div>
 
 <!-- tm -->
-<div class="mb-4">
+<!-- <div class="mb-4">
     <label for="exampleInputurl" class="form-label">tm</label>
-    <input type="number" name="technical_mentor_id" ngModel class="form-control" id="technical_mentor_id" aria-describedby="">
-</div>
+    <input type="number" name="technical_mentor_id" readonly value=" " ngModel class="form-control" id="technical_mentor_id" aria-describedby="">
+</div> -->
 <!-- mod -->
 <div class="mb-4">
     <label for="exampleInputurl" class="form-label">module</label>
-    <input type="number" name="module_id" ngModel class="form-control" id="module_id" aria-describedby="">
+    <!-- <input type="number" name="module_id" ngModel class="form-control" id="module_id" aria-describedby=""> -->
+
+<select id="module_id" name="module_id" class="form-control"> 
+        <option value="11">Django</option>
+        <option  value="8">Pro-dev</option>
+        <!-- <option *ngFor="let mod of personalModules" value="{{mod.id}}" id="{{mod.id}}" >{{mod.name}}</option> -->
+    </select>
+
 </div>
 
 <!-- date -->
@@ -50,7 +57,8 @@
 <div class="row mb-4">
     
     </div>
-</form><div class="col text-center">
-    <button type="submit" class="btn">Add Schedule</button>
-    </div>
+        <div class="col text-center">
+            <button type="submit" class="btn">Add Schedule</button>
+        </div>
+</form>
 </div>

@@ -12,7 +12,7 @@ import { Token } from '@angular/compiler';
 export class HomeComponent implements  OnInit{
   title = 'ScheduleApp';
 
-  constructor(private service:ScheduleService, private http:HttpClient, private tokenService: TokenStorageService) { }
+  constructor(private service:ScheduleService, private tokenService: TokenStorageService) { }
 
   currentUser:any;
   personalModules:any=[];
@@ -22,9 +22,16 @@ export class HomeComponent implements  OnInit{
   id:any;
   email:any;
   user_type:any;
+  user_id:any;
 
   ngOnInit(): void {
-    this.service.getMyModules()
+      //  Get Current User
+      this.currentUser = this.tokenService.getUser();
+      console.log(this.currentUser);
+      this.id = this.currentUser.user_id;
+
+      
+    this.service.getMyModules(this.currentUser.user_id)
       .subscribe(
         data=>{
           this.personalModules=data
@@ -40,10 +47,7 @@ export class HomeComponent implements  OnInit{
       );
 
 
-      //  Get Current User
-      this.currentUser = this.tokenService.getUser();
-    console.log(this.currentUser);
-    this.id = this.currentUser.user_id;
+    
 
 
 
