@@ -2,7 +2,7 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head> 
 
-<nav id="sidebar" class="">
+<nav id="sidebar" class="" *ngIf="isAuthenticated">
     <div class="sidebar-header ">
         <h3><a href="/">ClassApp</a></h3>
         <strong><i class="fas fa-home"></i></strong>
@@ -69,6 +69,6 @@
     </ul>
 
     <div class="logout ml-2 mr-2 ">
-        <a href="/login" class="btn btn-sm btn-outline-danger d-block mx-auto"> Logout</a>
+        <a href="" class="btn btn-sm btn-outline-danger d-block mx-auto"> Logout</a>
     </div>
 </nav>

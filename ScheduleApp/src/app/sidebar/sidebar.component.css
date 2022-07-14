@@ -33,7 +33,7 @@ a:focus {
   padding: 20px 10px;
   background-color: #35495e;
   border: none;
-  border-radius: 0;
+  border-radius: 0.2rem;
   margin-bottom: 40px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -51,7 +51,7 @@ span {
 
 #sidebar {
   min-width: 10rem;
-  max-width: 20rem;
+  max-width: 17rem;
   padding: 0.5rem 4rem 1rem 2rem;
   /* padding-right:4rem; */
   background: #4a154b;
@@ -63,7 +63,7 @@ span {
 }
 
 #sidebar.active {
-  min-width: 90px;
+  min-width: 46px;
   max-width: 90px;
   text-align: center;
 }
@@ -82,7 +82,7 @@ span {
 }
 
 #sidebar.active ul li a {
-  padding: 20px 10px;
+  padding: 20px 5px;
   text-align: center;
   font-size: 0.85em;
 }
@@ -98,14 +98,7 @@ span {
   padding: 10px !important;
 }
 
-#sidebar.active .dropdown-toggle::after {
-  top: auto;
-  bottom: 10px;
-  right: 50%;
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-}
+
 
 #sidebar .sidebar-header {
   padding: 20px;
@@ -142,13 +135,6 @@ a[data-toggle="collapse"] {
   position: relative;
 }
 
-.dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-}
 
 ul ul a {
   font-size: 0.9em !important;
@@ -182,14 +168,7 @@ ul.CTAs a {
     text-align: center;
     margin-left: -80px !important;
   }
-  .dropdown-toggle::after {
-    top: auto;
-    bottom: 10px;
-    right: 50%;
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
-  }
+
   #sidebar.active {
     margin-left: 0 !important;
   }

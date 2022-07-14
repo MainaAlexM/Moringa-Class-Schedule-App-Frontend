@@ -18,14 +18,14 @@ import { ScheduleDetailsComponent } from './schedule-details/schedule-details.co
 
 const routes: Routes = [
   { path: "tm", component: TmProfileComponent},
-  { path: "", component: HomeComponent},
+  { path: "home", component: HomeComponent},
   { path: "student", component: StuProfileComponent},
   { path: "session-search", component: SessionSchComponent},
   { path: "session", component: SessionDetailsComponent},
   { path: 'update', component: UpdateFormComponent },
   { path: 'post', component: PostFormComponent },
   { path: 'add', component: AddStudentFormComponent },
-  { path: 'login', component:LoginComponent},
+  { path: '', component:LoginComponent},
   { path: 'signup', component:SignupComponent},
   { path: 'schedule', component: ScheduleComponent },
   { path: 'search', component: SearchComponent },

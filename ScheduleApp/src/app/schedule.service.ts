@@ -13,6 +13,7 @@ export class ScheduleService {
 private APIurl = `https://class-scheduleapp.herokuapp.com`
 
 user_id:any;
+module_id:any;
 
   constructor(private http: HttpClient) { }
 
@@ -74,13 +75,13 @@ postModule(val: any): Observable<any>{
 
 // Update Profile
 updateProfile(data: any): Observable<any[]> {
-  return this.http.put<any[]>(`${this.APIurl}/api/user/5/update/profile/`, data)
+  return this.http.put<any['this.user_id']>(`${this.APIurl}/api/user/${this.user_id}/update/profile/`, data)
 }
 
 
-getModuleSessions(): Observable<any[]> {
+getModuleSessions(){
     
-  return this.http.get<any['1']>(`${this.APIurl}/api/module/1/sessions/`)
+  return this.http.get(`${this.APIurl}/api/module/${this.module_id}/sessions/`)
 }
 
 // Get announcements
