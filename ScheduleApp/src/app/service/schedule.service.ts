@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ScheduleService {
+
   private ApiUrl = 'https://class-scheduleapp.herokuapp.com'
   httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   constructor(private http: HttpClient) { }
@@ -29,6 +30,10 @@ export class ScheduleService {
   deleteSchedules(val: any): Observable<any> {
     return this.http.delete(this.ApiUrl + '/sessions/' + val,
     { headers: this.httpHeaders });
+  }
+
+  getModuleSessions(): Observable<any[]> {
+    return this.http.get<any['1']>(`${this.ApiUrl}/api/module/1/sessions/`)
   }
   
 }

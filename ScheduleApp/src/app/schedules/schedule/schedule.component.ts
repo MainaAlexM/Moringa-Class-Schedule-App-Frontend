@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScheduleService } from 'src/app/service/schedule.service';
+import { ScheduleService } from 'src/app/schedule.service';
 import { Schedule } from 'src/app/schedule';
 @Component({
   selector: 'app-schedule',
@@ -8,11 +8,11 @@ import { Schedule } from 'src/app/schedule';
 })
 export class ScheduleComponent implements OnInit {
 
-  constructor(private _ScheduleService: ScheduleService) { }
+  constructor(private service: ScheduleService) { }
 
   sessions: Schedule[] = [];
   ngOnInit(): void {
-    this._ScheduleService.getSchedules()
+    this.service.getSchedules()
       .subscribe(
         data => {
           this.sessions = data

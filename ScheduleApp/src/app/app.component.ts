@@ -16,22 +16,35 @@ export class AppComponent {
   form:any={
     comment:null
   }    
-  constructor(private _ScheduleService: ScheduleService,
+  constructor(private service: ScheduleService,
     private http: HttpClient,
     ) { }
 
   listscomments : Schedule [] = [];
   objcomments!: Schedule;
 
+  ModuleSessions:any=[]
+
   ngOnInit(): void {
-    this._ScheduleService.getComments()
+    this.service.getComments()
     .subscribe(
       data=>{
         this.listscomments=data
       }
+      
     );
-  
+    // console.log(this.listscomments)
+
+    // Get Module Sessions
+    this.service.getModuleSessions()
+    .subscribe(
+      data=>{
+        this.ModuleSessions=data
+      }
+    );
     
   }
   
 }
+
+
