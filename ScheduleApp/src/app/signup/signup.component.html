@@ -1,19 +1,24 @@
 <div class="container">
-  <form class="form-control p-5 h-95" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+  <form class="form-control p-3" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
   #f="ngForm" novalidate>
   <div class="signup-form mx-auto">
     <h2 class="title">Create Account</h2>
-    <!-- <div class="mb-4">
-        <input type="text" class="form-control" name="name" [(ngModel)]="form.name" minlength="3" required
-          name #name="ngModel" placeholder="name" />
-        <div class="alert-danger" *ngIf="name.errors && f.submitted">
-          <div *ngIf="name.errors?.['required']">Name Required</div>
-          <div *ngIf="name.errors?.['minlength']">
-            Name must have atleast 3 characters
-          </div>
+    <!-- username -->
+    <div class="mb-2 input-field">
+      <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
+        maxlength="20" #username="ngModel" placeholder="Username" />
+      <div class="alert-danger" *ngIf="username.errors && f.submitted">
+        <div *ngIf="username.errors?.['required']">Username is required</div>
+        <div *ngIf="username.errors?.['minlength']">
+          Username must be at least 3 characters
         </div>
-    </div> -->
-       <div class="mb-4 input-field">
+        <div *ngIf="username.errors?.['maxlength']">
+          Username must be at most 20 characters
+        </div>
+      </div>
+    </div>
+    <!-- email -->
+    <div class="mb-2 input-field">
       <label for="email"></label>   
       <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
         #email="ngModel" placeholder="Enter Your Email" />
@@ -24,9 +29,8 @@
         </div>
       </div>
     </div>
-
-        
-    <div class="mb-4 input-field">
+    <!-- password -->
+    <div class="mb-2 input-field">
       <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
         minlength="8" #password="ngModel" placeholder="**********" />
       <div class="alert-danger" *ngIf="password.errors && f.submitted">
@@ -36,7 +40,7 @@
         </div>
       </div>
     </div>
-
+    <!-- inputs -->
     <div class="input">
       <div>
         <input type="checkbox" name="" id="remember">
@@ -46,14 +50,13 @@
     </div>
 
     <p class="terms">By Continue, you agree our <strong>Condition of use</strong> and <strong>Privacy Notice</strong>.</p>
-
+<!-- signup button -->
     <button class="btn signup mx-auto">Sign Up</button>
-
+    <!-- login if you have an account -->
     <div class="new-user">
       <p>Already Have an Account?</p>
       <a href="/login" class="btn create">Login</a>
-
     </div>
   </div>
- </form>
+</form>
 </div>

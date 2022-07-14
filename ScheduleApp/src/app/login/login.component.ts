@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           window.location.reload();
         });        
         
-        // alert(data.response_msg)
+        alert(data.response_msg)
         console.log(data)
         
       },
@@ -47,7 +47,5 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = true
       });
   }
-
-
 
 }

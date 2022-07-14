@@ -34,6 +34,7 @@ export class TmProfileComponent implements  OnInit{
     
       submitData(value: any) {
         let body = {
+          email: value.email,
           name: value.name,
           profile_image: value.profile_image,
           bio: value.bio
