@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ScheduleService } from '../schedule.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../service/token-storage.service';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 
@@ -12,24 +13,36 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 export class TmProfileComponent implements  OnInit{
   title = 'ScheduleApp';
 
-  constructor(private route : ActivatedRoute, private router: Router, private service:ScheduleService) { }
+  private APIurl = `https://class-scheduleapp.herokuapp.com`
+
+  constructor(private route : ActivatedRoute, private router: Router, private service:ScheduleService, private tokenService:TokenStorageService) { }
 
   profile:any=[];
+  currentUser:any;
+  id:any;
+  user_id:any;
+
 
   ngOnInit(): void {
-    this.service.getProfile()
+          //  Get Current User
+  this.currentUser = this.tokenService.getUser();
+  console.log(this.currentUser);
+  this.id = this.currentUser.user_id;
+  console.log(this.id);
+  
+    this.service.getProfile(this.currentUser.user_id)
       .subscribe(
         data=>{
           this.profile=data
         }
       );
+
+
+
       }
 
-      // this.profile.getProfile(this.route.snapshot.params['id']).subscribe((result:any)=>{
-      //   console.log('result', result);
-      //   this.profile = result.shows;
-      //   console.log(this.profile);
-      // })
+
+  
     
     
       submitData(value: any) {

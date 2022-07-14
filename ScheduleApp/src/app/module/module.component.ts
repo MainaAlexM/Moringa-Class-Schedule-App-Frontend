@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MaxLengthValidator } from '@angular/forms';
 import { ScheduleService } from '../schedule.service';
-562
+import { TokenStorageService } from '../service/token-storage.service';
 
 import { FormsModule }   from '@angular/forms';
+import { throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-module',
@@ -13,15 +15,26 @@ import { FormsModule }   from '@angular/forms';
 export class ModuleComponent implements OnInit {
 
   
-  constructor(private service: ScheduleService) { }
+  constructor(private service: ScheduleService, private router:Router, private tokenService:TokenStorageService) { }
 
   personalModules:any=[];
   profile:any=[];
+  user_id:any;
+  id:any;
+  currentUser:any;
+  module = {};
+
 
   ngOnInit(): void {
 
+    //  Get Current User
+    this.currentUser = this.tokenService.getUser();
+    console.log(this.currentUser);
+    this.id = this.currentUser.user_id;
+
+
     // Get Available Modules Posted by TM
-      this.service.getMyModules()
+      this.service.getMyModules(this.id)
         .subscribe(
           data=>{
             this.personalModules=data
@@ -30,7 +43,7 @@ export class ModuleComponent implements OnInit {
 
 
       // Get tm_id from Profile
-      this.service.getProfile()
+      this.service.getProfile(this.id)
       .subscribe(
         data=>{
           this.profile=data
@@ -41,15 +54,24 @@ export class ModuleComponent implements OnInit {
     // Submit Module Data
   submitData(value: any) {
     let body = {
-      name: value.name,
-      technical_mentor_id: this.profile.technical_mentor.pk
+      name: value.module,
+      technical_mentor_id: this.id,
+      profile_image:""
     }
 
     this.service.postModule(body)
       .subscribe(response => {
         console.log(response)
-      })
-  }
-// get the current user's id and pass it to the post module
+      });
+    }
 
-}
+    reloadCurrentRoute() {
+      let currentUrl = this.router.url;
+      this.router.navigateByUrl('/module', {skipLocationChange: true}).then(() => {
+          this.router.navigate([currentUrl]);
+      });
+  }
+   
+       }
+      
+  

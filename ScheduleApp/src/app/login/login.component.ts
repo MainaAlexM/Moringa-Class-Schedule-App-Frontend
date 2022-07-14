@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   isLoggedIn =  false;
   isLoginFailed = false;
-  errorMessage = '';
+  errorMessage = 'Success';
 
   constructor(private authService: AuthService, private router: Router, private tokenStorage: TokenStorageService) { }
 
