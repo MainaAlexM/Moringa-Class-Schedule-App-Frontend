@@ -25,6 +25,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModuleComponent } from './module/module.component';
+import { ScheduleDetailsComponent } from './schedule-details/schedule-details.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ModuleComponent } from './module/module.component';
     SignupComponent,
     SidebarComponent,
     FooterComponent,
-    ModuleComponent
+    ModuleComponent,
+    ScheduleDetailsComponent
   ],
   imports: [
     BrowserModule,

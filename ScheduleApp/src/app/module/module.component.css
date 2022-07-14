@@ -1,0 +1,24 @@
+form, .my-modules, .butn{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 1;
+    background: transparent;
+    max-width: 600px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.add-mod-btn{
+    outline: #4A154B;
+    border-radius: 0.4rem;
+}
+ul li{
+    list-style:none;
+}
+
+.students-link{
+    text-decoration: wavy;
+    color: #4A154B;;
+}

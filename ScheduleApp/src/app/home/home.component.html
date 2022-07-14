@@ -2,11 +2,12 @@
 <div class="dash-title row">
     
     <div class="heading col-md-5">
-        <h2 class="home-head mx-5">Dashboard</h2>
+        <h2 class="home-head mx-5">Dashboard </h2> 
+    
     </div>
 
     <div class="col-md-5 text-center">
-        <a href="add_module"><button type="submit" class="btn">New Module</button></a>
+        <a href="/module"><button type="submit" class="btn">My Modules</button></a>
     </div>
     <hr class="head-rule">
 
@@ -15,17 +16,19 @@
 
     <div class="display col-md-8">
 
-        <a href="#Card" class="col-md-4" *ngFor="let module of myModules">   
+        <a href="#Card" class="col-md-4" *ngFor="let mod of personalModules">   
             <div class="card p-3">
-                <img class="" src="{{module.profile_image}}" class="card-img-top" alt="html">
+                <img class="" src="{{mod.profile_image}}" class="card-img-top" alt="html">
                 <hr>
                 <div class="card-body">
-                    <h5 class="card-text">Name: {{module.name}}</h5>
-                    <p  class="text-end py-2"><small>By: {{module.technical_mentor.email}}</small></p>
+                    <h5 class="card-text">Module: {{mod.name}}</h5>
+                    <p  class="text-end py-2"><small>By: {{mod.technical_mentor.email}}</small></p>
                 </div>
             </div>
         </a>
-
+        <div class="info"> Current User:  {{currentUser.user_id}}
+            
+        </div>
     </div>
 
     <div class=" notifications col-md-4 px-5 text-center">
@@ -36,11 +39,12 @@
 
         <div class="announcements px-3">
             <h4><b>Announcements</b></h4><hr>
-            <div class="trial"> <i class="bi bi-grid-3x2-gap-fill"></i> First Announcement &#xF3F5;</div>
-            <div class="trial my-3">Second Announcement</div>
-            <div class="trial">Third Announcement</div>
-            <div class="trial my-3">Fourth Announcement</div>
-            <div class="trial">Fifth Announcement</div>
+
+            <div class="announcements text-start" *ngFor="let ann of announcements">   
+                <ul>
+                    <li><a href="">{{ann.content}}</a> </li>
+                </ul>
+        </div>
         </div>
     </div>
 

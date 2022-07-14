@@ -25,3 +25,17 @@ a:hover{
     border-radius: 0.4rem;
     font-family: 'Times New Roman', Times, serif;
 }
+.announcements{
+    /* overflow-x: hidden; */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    padding: .5rem;
+    padding-bottom: 1rem;
+}
+ul li{
+    list-style-type:square;
+    padding:.1rem;
+}
+ul li a{
+    color: #38032b;
+
+}

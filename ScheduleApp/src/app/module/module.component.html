@@ -1,15 +1,42 @@
-<div class="container">
-    <div class="module-form mx-auto">
-    <h2 class="title">Add New Module</h2>
+<div class="container row mt-3">
 
-    <div class="input-field">
-        <label for="email">Student Email</label>
-        <input type="email" placeholder="Enter student email address" name="email" id="email">
-    
+    <div class="col-md-5">
+        <form  (ngSubmit)="submitData(postForm.value)" #postForm="ngForm" class="w-30 mx-auto module-add" >
+            <h3 class="text-center heading">Add New Module </h3>
+            <hr>
+            <!-- title -->
+        <div class="mb-4">
+            <label for="module" class="form-label">Module Name</label>
+            <input type="text" name="module" ngModel class="form-control" id="module" placeholder="Enter Module Name here" aria-describedby="">
+        </div>
+
+        <div class="col text-center">
+            <button type="submit" class="add-mod-btn btn-outline-success">Add Module</button>
+        </div>
+        
+        </form>
+    <!--  End of Form -->
+
+        <br>
+        <br>
+
+        <div class="butn">
+            <h3>Add Students To my Module</h3>
+            <a href="/add" class="students-link text-center">
+                Add Students
+            </a>
+        </div>
+
     </div>
 
 
-        <button class="btn login mx-auto">Submit</button>
-
+    <div class="col-md-5 my-modules">
+        <h3 class="text-center" >My Modules</h3>
+        <hr>
+        <div class="listing" *ngFor="let mod of personalModules">
+            <ul>
+                <li>{{mod.name}}</li>
+            </ul>
+        </div>
     </div>
 </div>
