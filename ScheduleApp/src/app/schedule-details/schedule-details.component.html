@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-6 mb-5 pb-5">
+<div class="card w-18rem"*ngFor="let sess of ModuleSessions">
+    <div class="card-body">
+    <h5 class="card-title">{{sess.module.name}}</h5>
+    <div class="d-block">
+    <p class="card-text"><b>Start Time:</b>{{sess.start}}</p>
+    <p class="card-text"><b>End Time:</b>{{sess.end}}</p>
+    </div>
+    <a href="{{sess.meet_url}}" class="btn ">Join Meet</a>
+    </div>
+    </div>
+</div>
+
+</div>

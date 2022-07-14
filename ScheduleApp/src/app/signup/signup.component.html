@@ -1,64 +1,62 @@
-<section class="vh-80" style="background-color: #e6e3e3; padding-bottom: 0vh;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-xl-10">
-        <div class="card" style="border-radius: 1rem;">
-          <div class="row g-0">
-            <div class=" col-lg-5 d-none d-md-block" id="blockimg" style="padding-top: 10vh; padding-left: 10vh;">
-              <img src="https://www.bookkaru.com/images/pages/register.png" alt="login form" class="img-fluid"
-                style="border-radius: 1rem 0 0 1rem;" />
-            </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
-
-
-                <h3 class="text-center fs-3 logo fw-bold mb-4">Admin Register</h3>
-                <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-
-                  <div class="mb-4">
-                    <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
-                      maxlength="20" #username="ngModel" placeholder="Username" />
-                    <div class="alert-danger" *ngIf="username.errors && f.submitted">
-                      <div *ngIf="username.errors?.['required']">Username is required</div>
-                      <div *ngIf="username.errors?.['minlength']">
-                        Username must be at least 3 characters
-                      </div>
-                      <div *ngIf="username.errors?.['maxlength']">
-                        Username must be at most 20 characters
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mb-4">
-                    <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
-                      #email="ngModel" placeholder="Email" />
-                    <div class="alert-danger" *ngIf="email.errors && f.submitted">
-                      <div *ngIf="email.errors?.['required']">Email is required</div>
-                      <div *ngIf="email.errors?.['email']">
-                        Email must be a valid email address
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mb-4">
-                    <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
-                      minlength="8" #password="ngModel" placeholder="Create Password" />
-                    <div class="alert-danger" *ngIf="password.errors && f.submitted">
-                      <div *ngIf="password.errors?.['required']">Enter at least 8 characters
-                      </div>
-                    </div>
-                  </div>
-                  
-                    <div class="pt-1 mb-4" style="color: #51b4b4;">
-                      <button class="btn btn-lg btn-block" style="background-color: #51b4b4;">Register</button>
-                    </div>
-
-                  <p class="mb-5 pb-lg-2 " style="color: black;">You already have an account? <a href="login"
-                      style="color: #ed5e46;" class="text-decoration-none"> Login here</a></p>
-                </form>
-              </div>
-            </div>
-          </div>
+<div class="container">
+  <form class="form-control p-3" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm" novalidate>
+  <div class="signup-form mx-auto">
+    <h2 class="title">Create Account</h2>
+    <!-- username -->
+    <div class="mb-2 input-field">
+      <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
+        maxlength="20" #username="ngModel" placeholder="Username" />
+      <div class="alert-danger" *ngIf="username.errors && f.submitted">
+        <div *ngIf="username.errors?.['required']">Username is required</div>
+        <div *ngIf="username.errors?.['minlength']">
+          Username must be at least 3 characters
+        </div>
+        <div *ngIf="username.errors?.['maxlength']">
+          Username must be at most 20 characters
         </div>
       </div>
     </div>
+    <!-- email -->
+    <div class="mb-2 input-field">
+      <label for="email"></label>   
+      <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+        #email="ngModel" placeholder="Enter Your Email" />
+      <div class="alert-danger" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">
+          Email must be a valid email address
+        </div>
+      </div>
+    </div>
+    <!-- password -->
+    <div class="mb-2 input-field">
+      <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+        minlength="8" #password="ngModel" placeholder="**********" />
+      <div class="alert-danger" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+        <div *ngIf="password.errors?.['minlength']">
+          Password must be at least 8 characters
+        </div>
+      </div>
+    </div>
+    <!-- inputs -->
+    <div class="input">
+      <div>
+        <input type="checkbox" name="" id="remember">
+        <label for="remember">Keep me signed in? </label>
+      </div>
+      <a href="#">forgot your password?</a>
+    </div>
+
+    <p class="terms">By Continue, you agree our <strong>Condition of use</strong> and <strong>Privacy Notice</strong>.</p>
+<!-- signup button -->
+    <button class="btn signup mx-auto">Sign Up</button>
+    <!-- login if you have an account -->
+    <div class="new-user">
+      <p>Already Have an Account?</p>
+      <a href="/login" class="btn create">Login</a>
+    </div>
   </div>
-</section>
+</form>
+</div>
