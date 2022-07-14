@@ -67,6 +67,12 @@ getMyModules(user_id:any){
   return this.http.get(`${this.APIurl}/api/technical-mentor/${user_id}/modules/`)
 }
 
+// Get Student modules
+getStudentModules(user_id:any){
+    
+  return this.http.get(`${this.APIurl}/api/technical-mentor/${user_id}/modules/`)
+}
+
 // Post a Module
 postModule(val: any): Observable<any>{
   return this.http.post(`${this.APIurl}/modules/`, val,
@@ -74,8 +80,8 @@ postModule(val: any): Observable<any>{
 }
 
 // Update Profile
-updateProfile(data: any): Observable<any[]> {
-  return this.http.put<any['this.user_id']>(`${this.APIurl}/api/user/${this.user_id}/update/profile/`, data)
+updateProfile(data:any): Observable<any[]> {
+  return this.http.put<any['5']>(`${this.APIurl}/api/user/5/update/profile/`, data)
 }
 
 

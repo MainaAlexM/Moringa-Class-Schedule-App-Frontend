@@ -18,10 +18,9 @@
 
         <a href="#Card" class="col-md-4" *ngFor="let mod of personalModules">   
             <div class="card p-3">
-                <img class="" src="{{mod.profile_image}}" class="card-img-top" alt="html">
                 <hr>
                 <div class="card-body">
-                    <h5 class="card-text">Module: {{mod.name}}</h5>
+                    <h5 class="card-text my-3 text-start">Module: <br> {{mod.name}}</h5>
                     <p  class="text-end py-2"><small>By: {{mod.technical_mentor.email}}</small></p>
                 </div>
             </div>
