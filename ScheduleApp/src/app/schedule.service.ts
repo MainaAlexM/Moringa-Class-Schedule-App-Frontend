@@ -70,7 +70,7 @@ getMyModules(user_id:any){
 // Get Student modules
 getStudentModules(user_id:any){
     
-  return this.http.get(`${this.APIurl}/api/technical-mentor/${user_id}/modules/`)
+  return this.http.get(`${this.APIurl}/api/student/${user_id}/modules/`)  
 }
 
 // Post a Module
@@ -81,14 +81,15 @@ postModule(val: any): Observable<any>{
 
 // Update Profile
 updateProfile(data:any): Observable<any[]> {
-  return this.http.put<any['5']>(`${this.APIurl}/api/user/5/update/profile/`, data)
+  return this.http.put<any['25']>(`${this.APIurl}/api/user/25/update/profile/`, data)
 }
 
 
 getModuleSessions(){
     
-  return this.http.get(`${this.APIurl}/api/module/${this.module_id}/sessions/`)
+  return this.http.get(`${this.APIurl}/api/module/8/sessions/`)
 }
+// ${this.module_id}
 
 // Get announcements
 getAnnouncements(): Observable<any[]> {

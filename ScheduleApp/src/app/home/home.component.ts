@@ -16,6 +16,7 @@ export class HomeComponent implements  OnInit{
 
   currentUser:any;
   personalModules:any=[];
+  studentModules:any=[];
   announcements:any=[];
   theUser:any;
   name:any;
@@ -35,6 +36,14 @@ export class HomeComponent implements  OnInit{
       .subscribe(
         data=>{
           this.personalModules=data
+        }
+      );
+
+
+      this.service.getStudentModules(this.currentUser.user_id)
+      .subscribe(
+        data=>{
+          this.studentModules=data
         }
       );
 

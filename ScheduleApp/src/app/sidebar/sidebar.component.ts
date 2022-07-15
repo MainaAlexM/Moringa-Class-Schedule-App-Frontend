@@ -19,6 +19,7 @@ export class SidebarComponent implements OnInit {
   userdetail: any;
   currentUser:any
   data:any
+  id:any;
   // is_TM?:boolean
   constructor(
     private tokenStorageService: TokenStorageService,
@@ -27,6 +28,13 @@ export class SidebarComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+
+    //  Get Current User
+    this.currentUser = this.tokenStorageService.getUser();
+    console.log(this.currentUser);
+    this.id = this.currentUser.user_id;
+    
+
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
@@ -38,7 +46,6 @@ export class SidebarComponent implements OnInit {
     //   this.data=data
     // });
 
- 
     
   }
 }

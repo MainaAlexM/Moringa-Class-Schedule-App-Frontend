@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { UpdateFormComponent } from './form/update-form/update-form.component';
+import { UpdateFormComponent } from './form/add-student-form/update-form/update-form.component';
 import { PostFormComponent } from './form/post-form/post-form.component';
 import { AddStudentFormComponent } from './form/add-student-form/add-student-form.component';
 import { ScheduleComponent } from './schedules/schedule/schedule.component';

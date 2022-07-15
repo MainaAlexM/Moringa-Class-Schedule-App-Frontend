@@ -4,7 +4,7 @@
 
 <nav id="sidebar" class="" *ngIf="isAuthenticated">
     <div class="sidebar-header ">
-        <h3><a href="/home">ClassApp</a></h3>
+        <h3><a href="home">ClassApp</a></h3>
         <strong><i class="fas fa-home"></i></strong>
     </div>
     
@@ -20,7 +20,7 @@
         </li>
 
         <li class="mb-4">
-            <a href="/">
+            <a href="home">
                 <img src="https://img.icons8.com/material/24/000000/dashboard-layout.png"/>&nbsp;
                 &nbsp; Dashboard
             </a>
@@ -29,21 +29,21 @@
 
 
         <li class="mb-4">
-            <a href="/schedule">
+            <a href="schedule">
                 <i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;
                 &nbsp; Schedule
             </a>    
         </li>
 
-        <li class="mb-4">
-            <a href="/post">
+        <li class="mb-4" *ngIf="currentUser.user_type == 'TM'">
+            <a href="post">
                 <i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;
                 &nbsp;Post Schedule
             </a>    
         </li>
         
-        <li class="mb-4">
-            <a href="/add">
+        <li class="mb-4" *ngIf="currentUser.user_type == 'TM'">
+            <a href="add">
                 <i class="fa fa-user"></i>&nbsp;
                 &nbsp; Add Student
             </a>
@@ -52,14 +52,14 @@
         <li class="mb-4">
 
             <!--Todo Loop between TM and Student -->
-            <a href="/tm">
+            <a href="tm">
                 <i class="fa fa-cog" aria-hidden="true"></i> &nbsp;
                 Settings
             </a>
         </li>
 
         <li class="mb-4">
-            <a href="/sessions">
+            <a href="sessions">
                 <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> &nbsp;
                 Sessions
             </a>

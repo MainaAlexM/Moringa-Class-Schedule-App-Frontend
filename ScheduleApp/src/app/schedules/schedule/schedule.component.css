@@ -1,9 +1,16 @@
-table{
+table {
     background-color: #fff;
     color: black;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
     height: 25vh;
+}
+.all{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+.all-comps{
+    margin:0 auto ;
 }
 
 a{

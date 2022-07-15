@@ -6,8 +6,8 @@
     
     </div>
 
-    <div class="col-md-5 text-center">
-        <a href="/module"><button type="submit" class="btn">My Modules</button></a>
+    <div class="col-md-5 text-center" *ngIf="currentUser.user_type == 'TM'">
+        <a href="module"><button type="submit" class="btn">My Modules</button></a>
     </div>
     <hr class="head-rule">
 
@@ -25,6 +25,19 @@
                 </div>
             </div>
         </a>
+
+        <!-- Student Display -->
+        <a href="#Card" class="col-md-4" *ngFor="let mod of studentModules">   
+            <div class="card p-3">
+                <hr>
+                <div class="card-body">
+                    <h5 class="card-text my-3 text-start">Module: <br> {{mod.name}}</h5>
+                    <p  class="text-end py-2"><small>Added By: {{mod.technical_mentor.email}}</small></p>
+                </div>
+            </div>
+        </a>
+
+        
         <!-- <div class="info"> Current User:  {{currentUser.user_id}}
             
         </div> -->
