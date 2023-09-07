@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ScheduleService {
 
-  private ApiUrl = 'https://class-scheduleapp.herokuapp.com'
+  private ApiUrl = 'http://127.0.0.1:8000/?format=openapi'
   httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   constructor(private http: HttpClient) { }
   // get schedules
