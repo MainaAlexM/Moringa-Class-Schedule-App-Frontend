@@ -8,7 +8,8 @@ const httpOptions = {
   headers:new HttpHeaders({ 'Content-Type': 'application/json'})
 };
 // const API_URL = 'http://127.0.0.1:8000/';
-const API_URL= "http://127.0.0.1:8000/?format=openapi";
+// const API_URL= "http://127.0.0.1:8000/?format=openapi";
+const API_URL= "http://127.0.0.1:8000";
 
 @Injectable({
   providedIn: 'root'

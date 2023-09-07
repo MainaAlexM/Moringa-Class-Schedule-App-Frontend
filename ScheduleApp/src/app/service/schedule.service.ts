@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ScheduleService {
 
-  private ApiUrl = 'http://127.0.0.1:8000/?format=openapi'
+  private ApiUrl = "http://127.0.0.1:8000"
   httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
   constructor(private http: HttpClient) { }
   // get schedules

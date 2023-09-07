@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ScheduleService } from '../schedule.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../service/token-storage.service';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+// import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 export class TmProfileComponent implements  OnInit{
   title = 'ScheduleApp';
 
-  private APIurl = `https://class-scheduleapp.herokuapp.com`
+  private APIurl = `http://127.0.0.1:8000`
 
   constructor(private route : ActivatedRoute, private router: Router, private service:ScheduleService, private tokenService:TokenStorageService) { }
 

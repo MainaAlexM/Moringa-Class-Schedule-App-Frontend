@@ -8,8 +8,8 @@ import { AuthService } from 'src/app/service/auth.service';
 const httpOptions = {
   headers:new HttpHeaders({ 'Content-Type': 'application/json'})
 };
-// const API_URL = 'http://127.0.0.1:8000/';
-const API_URL = "https://class-scheduleapp.herokuapp.com";
+const API_URL = "http://127.0.0.1:8000";
+// const API_URL = "https://class-scheduleapp.herokuapp.com";
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
