@@ -10,7 +10,7 @@ import { Schedule } from './class/schedule'
 })
 export class ScheduleService {
 
-private APIurl = `https://class-scheduleapp.herokuapp.com`
+private APIurl = `http://127.0.0.1:8000/?format=openapi`
 
 user_id:any;
 module_id:any;
